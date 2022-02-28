@@ -15,35 +15,28 @@ function condicionais_microondas(tempo_predefinido, tempo_digitado){
         console.log("A comida queimou.");
     }
     else {
-        console.log("Comida no ponto!")
+        console.log("Comida no ponto!");
     }
 }
 
 function microondas (comida_escolhida, tempo_digitado){
-   if (comida_escolhida == 'Pipoca') {
+   if (comida_escolhida == 'Pipoca' || comida_escolhida == 1) {
        condicionais_microondas(tempo_pipoca, tempo_digitado);
     }   
-    else if (comida_escolhida == 'Macarrão'){
+    else if (comida_escolhida == 'Macarrão' || comida_escolhida == 2){
         condicionais_microondas(tempo_macarrao, tempo_digitado);
     }
-    else if (comida_escolhida == 'Carne'){
+    else if (comida_escolhida == 'Carne' || comida_escolhida == 3)){
         condicionais_microondas(tempo_carne, tempo_digitado);
     }
-    else if (comida_escolhida == 'Feijão'){
+    else if (comida_escolhida == 'Feijão' || comida_escolhida == 4){
         condicionais_microondas(tempo_feijao, tempo_digitado);
     }
-    else if (comida_escolhida == 'Brigadeiro'){
+    else if (comida_escolhida == 'Brigadeiro' || comida_escolhida == 5){
         condicionais_microondas(tempo_brigadeiro, tempo_digitado);
     }
     else{
         console.log("Comida inválida.");
     }
+    console.log("Prato pronto, bom apetite!!!")
 }
-
-microondas("Pipoca", tempo_pipoca);
-console.log("Prato pronto, bom apetite!!!")
-
-
-//function microondas()
-
-
