@@ -1,8 +1,8 @@
-const tempo_pipoca = 10 
-const tempo_macarrao = 8
-const tempo_carne = 15
-const tempo_feijao = 12
-const tempo_brigadeiro = 8
+const tempo_pipoca = 10;
+const tempo_macarrao = 8;
+const tempo_carne = 15;
+const tempo_feijao = 12;
+const tempo_brigadeiro = 8;
 
 function condicionais_microondas(tempo_predefinido, tempo_digitado){
     if (tempo_digitado < tempo_predefinido){
@@ -38,5 +38,5 @@ function microondas (comida_escolhida, tempo_digitado){
     else{
         console.log("Comida inválida.");
     }
-    console.log("Prato pronto, bom apetite!!!")
+    console.log("Prato pronto, bom apetite!!!");
 }
