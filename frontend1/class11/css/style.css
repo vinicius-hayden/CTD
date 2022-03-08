@@ -9,6 +9,7 @@ header {
     background-color: tomato;
     position: flex;
     margin: 5px;
+    border-radius: 20px;
 }
 
 .thumbnail2 {
@@ -17,6 +18,7 @@ header {
     background-color: blue;
     position: flex;
     margin: 5px;
+    border-radius: 20px;
 }
 
 .thumbnail3 {
@@ -25,6 +27,7 @@ header {
     background-color: purple;
     position: flex;
     margin: 5px;
+    border-radius: 20px;
 }
 
 .thumbnail4 {
@@ -33,6 +36,7 @@ header {
     background-color: pink;
     position: flex;
     margin: 5px;
+    border-radius: 20px;
 }
 
 .thumbnail5 {
@@ -41,6 +45,7 @@ header {
     background-color: green;
     position: flex;
     margin: 5px;
+    border-radius: 20px;
 }
 
 .thumbnail6 {
@@ -49,4 +54,5 @@ header {
     background-color: yellow;
     position: flex;
     margin: 5px;
+    border-radius: 20px;
 }
