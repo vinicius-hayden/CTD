@@ -1,0 +1,52 @@
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.thumbnail1 {
+    height: 150px;
+    width: 200px;
+    background-color: tomato;
+    position: flex;
+    margin: 5px;
+}
+
+.thumbnail2 {
+    height: 150px;
+    width: 200px;
+    background-color: blue;
+    position: flex;
+    margin: 5px;
+}
+
+.thumbnail3 {
+    height: 150px;
+    width: 200px;
+    background-color: purple;
+    position: flex;
+    margin: 5px;
+}
+
+.thumbnail4 {
+    height: 150px;
+    width: 200px;
+    background-color: pink;
+    position: flex;
+    margin: 5px;
+}
+
+.thumbnail5 {
+    height: 150px;
+    width: 200px;
+    background-color: green;
+    position: flex;
+    margin: 5px;
+}
+
+.thumbnail6 {
+    height: 150px;
+    width: 200px;
+    background-color: yellow;
+    position: flex;
+    margin: 5px;
+}
