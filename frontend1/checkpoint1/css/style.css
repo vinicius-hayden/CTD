@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+header {
+    font-family: 'Roboto', sans-serif;
+    padding: 30px;
+    text-align: center;
+    background: coral;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+i {
+    font-size: 125px;
+}
+
+footer {
+    font-family: 'Roboto', sans-serif;
+    padding: 55px;
+    background: coral;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+section{
+    display: flex;
+}
+
+.iframe{
+    text-align: center;
+    justify-content: space-around;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: space-around;
+}
+
+.media-picture {
+	height: 500px;
+	background-image: url('https://static01.nyt.com/images/2018/03/25/travel/25braziltravel/25braziltravel-superJumbo-v2.jpg?quality=75&auto=webp');
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 0;
+	margin: auto;
+    background-position: center;
+
+}
+
+.headerbutton {
+    width: 160px;
+    background: green;
+    background-image: url('https://www.comunicacao.sp.gov.br/wp-content/uploads/2019/12/brasao_gesp_v_cor.png');
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid black;
+    font-size: 35px;
+}
+.smallbutton {
+    background: green;
+    border-radius: 15px;
+    text-align: center;
+    border: 3px solid black;
+    font-size: 25px;
+    align-items: center;
+    max-width: 300px;
+    min-width: 150px;
+    justify-content: center;
+}
+
+.bodyText {
+    font-family: 'Roboto', sans-serif;
+    font-size: 85px;
+    text-align: center;
+}
+
+.banner{
+    height: 500px;
+    width: 400px;
+    background-color: goldenrod;
+    border-radius: 45px;
+}
+
+.iconCircle {
+    height: 175px;
+    width: 175px;
+    background-color: aquamarine;
+    border-radius: 50%;
+    display: flex;
+    justify-content:center;
+    align-content: center;
+    align-items: center;
+}
+
+
+
+
