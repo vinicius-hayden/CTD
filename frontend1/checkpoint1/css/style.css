@@ -14,12 +14,27 @@ header {
 }
 
 i {
-    font-size: 125px;
+    font-size: 75px;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+li {
+    list-style-type:none ;
+    margin: 15px;
+}
+
+a {
+    color:black;
+    text-decoration: none;
 }
 
 footer {
     font-family: 'Roboto', sans-serif;
-    padding: 55px;
+    padding: 25px;
     background: rgb(212, 72, 72);
     display: flex;
     justify-content: space-evenly;
@@ -38,6 +53,24 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.menu li {
+    background: green;
+    border-radius: 25px;
+    text-align: center;
+    border: 1.5px solid black;
+    font-size: 25px;
+    align-items: center;
+    max-width: 300px;
+    min-width: 150px;
+    justify-content: center;
+    box-shadow: 5px 10px rgb(51, 49, 49);
+    display: inline;
+}
+
+.menu li a:hover{
+    color: #f3f3f3
 }
 
 .container {
@@ -70,7 +103,7 @@ body {
     background-repeat: no-repeat;
     box-shadow: 5px 10px rgb(51, 49, 49);
 }
-.smallbutton {
+/*.smallbutton {
     background: green;
     border-radius: 25px;
     text-align: center;
@@ -82,10 +115,11 @@ body {
     justify-content: center;
     box-shadow: 5px 10px rgb(51, 49, 49);
 }
+*/
 
 .bodyText {
     font-family: 'Roboto', sans-serif;
-    font-size: 85px;
+    font-size: 55px;
     text-align: center;
 }
 
@@ -97,8 +131,8 @@ body {
 }
 
 .iconCircle {
-    height: 175px;
-    width: 175px;
+    height: 125px;
+    width: 125px;
     background-color: aquamarine;
     border-radius: 50%;
     display: flex;
