@@ -20,7 +20,7 @@ i {
 footer {
     font-family: 'Roboto', sans-serif;
     padding: 55px;
-    background: coral;
+    background: rgb(212, 72, 72);
     display: flex;
     justify-content: space-evenly;
 }
