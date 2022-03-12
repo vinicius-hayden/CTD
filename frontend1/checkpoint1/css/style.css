@@ -72,9 +72,9 @@ body {
 }
 .smallbutton {
     background: green;
-    border-radius: 15px;
+    border-radius: 25px;
     text-align: center;
-    border: 3px solid black;
+    border: 1.5px solid black;
     font-size: 25px;
     align-items: center;
     max-width: 300px;
