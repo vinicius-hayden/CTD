@@ -58,13 +58,17 @@ body {
 }
 
 .headerbutton {
+    height: 120px;
     width: 160px;
     background: green;
     background-image: url('https://www.comunicacao.sp.gov.br/wp-content/uploads/2019/12/brasao_gesp_v_cor.png');
     border-radius: 15px;
-    text-align: center;
+    text-align: justify;
     border: 1px solid black;
     font-size: 35px;
+    background-position: center;
+    background-size: 155px;
+    background-repeat: no-repeat;
 }
 .smallbutton {
     background: green;
@@ -87,7 +91,7 @@ body {
 .banner{
     height: 500px;
     width: 400px;
-    background-color: goldenrod;
+    background-color: #f3f3f3;
     border-radius: 45px;
 }
 
