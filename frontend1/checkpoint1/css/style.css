@@ -2,9 +2,9 @@
 
 header {
     font-family: 'Roboto', sans-serif;
-    padding: 30px;
+    padding: 12px;
     text-align: center;
-    background: coral;
+    background: rgb(212, 72, 72);
     color: black;
     display: flex;
     flex-direction: row;
