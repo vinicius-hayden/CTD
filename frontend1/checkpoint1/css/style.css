@@ -1,23 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
-body{
+@media (min-width:425px) {
+  
+
+    .container {
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        justify-content: space-around;
+    }
+
 }
 
-header {
-    font-family: 'Roboto', sans-serif;
-    padding: 12px;
-    text-align: center;
-    background: rgb(212, 72, 72);
-    color: black;
-    display: flex;
-    flex-direction: row;
-    flex-wrap:nowrap;
-    justify-content: space-around;
-    align-items: center;
+@media (max-width:1280px){
+
+    .container {
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
 }
 
 i {
-    font-size: 75px;
+    font-size: 100px;
 }
 
 ul {
@@ -27,10 +33,11 @@ ul {
 
 li {
     list-style-type:none ;
-    margin: 15px;
+    margin: 2%;
 }
 
 a {
+    font-size: 75%;
     color:black;
     text-decoration: none;
 }
@@ -63,23 +70,32 @@ body {
     border-radius: 25px;
     text-align: center;
     border: 1.5px solid black;
-    font-size: 25px;
+    font-size: 125%;
     align-items: center;
-    max-width: 300px;
-    min-width: 150px;
+    max-width: 100%;
+    min-width: 100%;
     justify-content: center;
     box-shadow: 5px 10px rgb(51, 49, 49);
     display: inline;
+    margin-left: 1%;
+    margin-right: 1%;
 }
 
 .menu li a:hover{
     color: #f3f3f3
 }
 
-.container {
+header {
     font-family: 'Roboto', sans-serif;
+    padding: 12px;
+    text-align: center;
+    background: rgb(212, 72, 72);
+    color: black;
     display: flex;
+    flex-direction: row;
+    flex-wrap:nowrap;
     justify-content: space-around;
+    align-items: center;
 }
 
 .media-picture {
@@ -127,6 +143,8 @@ body {
     width: 400px;
     background-color: #f3f3f3;
     border-radius: 45px;
+    margin: 2%;
+    box-shadow: 0px 2px 15px black;
 }
 
 .textbanner {
