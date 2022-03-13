@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
+body{
+}
+
 header {
     font-family: 'Roboto', sans-serif;
     padding: 12px;
@@ -8,7 +11,7 @@ header {
     color: black;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap:nowrap;
     justify-content: space-around;
     align-items: center;
 }
@@ -103,19 +106,6 @@ body {
     background-repeat: no-repeat;
     box-shadow: 5px 10px rgb(51, 49, 49);
 }
-/*.smallbutton {
-    background: green;
-    border-radius: 25px;
-    text-align: center;
-    border: 1.5px solid black;
-    font-size: 25px;
-    align-items: center;
-    max-width: 300px;
-    min-width: 150px;
-    justify-content: center;
-    box-shadow: 5px 10px rgb(51, 49, 49);
-}
-*/
 
 .bodyText {
     font-family: 'Roboto', sans-serif;
@@ -139,11 +129,48 @@ body {
     border-radius: 45px;
 }
 
+.textbanner {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    margin: 1%;
+    margin-top: 2%;
+    font-weight: bold;
+}
+
+.subtextbanner {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    text-align: justify;
+    margin: 3%;
+    margin-top: 5%;
+}
+
 .imgbanner1{
     height: 200px;
     width: 400px;
     border-radius: 45px 45px 0px 0px;
     background-image:url('http://www.enjoymaringa.com.br/uploads/restaurantes/pizzaria-paulistana-capa-1464798116.jpg');
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.imgbanner2{
+    height: 200px;
+    width: 400px;
+    border-radius: 45px 45px 0px 0px;
+    background-image:url('https://www.lopes.com.br/blog/wp-content/uploads/2017/01/Slide1.jpg');
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.imgbanner3{ 
+    height: 200px;
+    width: 400px;
+    border-radius: 45px 45px 0px 0px;
+    background-image:url('https://www.melhoresdestinos.com.br/wp-content/uploads/2019/02/passagens-aereas-sao-paulo-capa2019-02-820x430.jpg');
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
