@@ -123,11 +123,30 @@ body {
     text-align: center;
 }
 
+.subBodyText {
+    font-family: 'Arial';
+    font-size: 20px;
+    text-align: justify;
+    font-style:normal;
+    margin: 5%;
+    font-weight: lighter;
+}
+
 .banner{
     height: 500px;
     width: 400px;
     background-color: #f3f3f3;
     border-radius: 45px;
+}
+
+.imgbanner1{
+    height: 200px;
+    width: 400px;
+    border-radius: 45px 45px 0px 0px;
+    background-image:url('http://www.enjoymaringa.com.br/uploads/restaurantes/pizzaria-paulistana-capa-1464798116.jpg');
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .iconCircle {
