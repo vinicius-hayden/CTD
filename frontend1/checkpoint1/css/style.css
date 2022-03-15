@@ -1,7 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 @media (min-width:425px) {
-  
+    header {
+        font-family: 'Roboto', sans-serif;
+        padding: 12px;
+        text-align: center;
+        background: rgb(212, 72, 72);
+        color: black;
+        display: flex;
+        flex-direction: row;
+        flex-wrap:nowrap;
+        justify-content: space-around;
+        align-items: center;
+    }
 
     .container {
         font-family: 'Roboto', sans-serif;
@@ -12,6 +23,19 @@
 }
 
 @media (max-width:1280px){
+    header {
+        font-family: 'Roboto', sans-serif;
+        padding: 12px;
+        text-align: center;
+        background: rgb(212, 72, 72);
+        color: black;
+        display: flex;
+        flex-direction: column;
+        flex-wrap:nowrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+
 
     .container {
         font-family: 'Roboto', sans-serif;
@@ -85,19 +109,6 @@ body {
     color: #f3f3f3
 }
 
-header {
-    font-family: 'Roboto', sans-serif;
-    padding: 12px;
-    text-align: center;
-    background: rgb(212, 72, 72);
-    color: black;
-    display: flex;
-    flex-direction: row;
-    flex-wrap:nowrap;
-    justify-content: space-around;
-    align-items: center;
-}
-
 .media-picture {
 	height: 500px;
 	background-image: url('https://static01.nyt.com/images/2018/03/25/travel/25braziltravel/25braziltravel-superJumbo-v2.jpg?quality=75&auto=webp');
@@ -106,6 +117,7 @@ header {
 	padding: 0;
 	margin: auto;
     background-position: center;
+    position: sticky;
 
 }
 
