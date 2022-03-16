@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
-@media (min-width:425px) {
+@media screen and (min-width: 1280px) {
     header {
         font-family: 'Roboto', sans-serif;
         padding: 12px;
@@ -82,7 +82,94 @@
 
 }
 
-@media (max-width:1280px){
+@media screen and (min-width: 431px) and (max-width: 1279px) {
+    header {
+        font-family: 'Roboto', sans-serif;
+        padding: 12px;
+        text-align: center;
+        background: rgb(212, 72, 72);
+        color: black;
+        display: flex;
+        flex-direction: column;
+        flex-wrap:nowrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu li {
+        background: green;
+        border-radius: 25px;
+        text-align: center;
+        border: 1.5px solid black;
+        font-size: 80%;
+        align-items: center;
+        max-width: 100%;
+        min-width: 100%;
+        justify-content: center;
+        box-shadow: 5px 10px rgb(51, 49, 49);
+        display:table;
+        margin-left: 1%;
+        margin-right: 1%;
+        flex-direction: column;
+    }
+
+    .container {
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    .banner{
+        height: 500px;
+        width: 400px;
+        background-color: #f3f3f3;
+        border-radius: 45px;
+        margin: 2%;
+        box-shadow: 0px 2px 15px black;
+    } 
+
+    
+    .imgbanner1{
+        height: 200px;
+        width: 400px;
+        border-radius: 45px 45px 0px 0px;
+        background-image:url('http://www.enjoymaringa.com.br/uploads/restaurantes/pizzaria-paulistana-capa-1464798116.jpg');
+        background-position: center;
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .imgbanner2{
+        height: 200px;
+        width: 400px;
+        border-radius: 45px 45px 0px 0px;
+        background-image:url('https://www.lopes.com.br/blog/wp-content/uploads/2017/01/Slide1.jpg');
+        background-position: center;
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .imgbanner3{ 
+        height: 200px;
+        width: 400px;
+        border-radius: 45px 45px 0px 0px;
+        background-image:url('https://www.melhoresdestinos.com.br/wp-content/uploads/2019/02/passagens-aereas-sao-paulo-capa2019-02-820x430.jpg');
+        background-position: center;
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+}
+
+@media screen and (max-width: 430px){
     header {
         font-family: 'Roboto', sans-serif;
         padding: 12px;
@@ -118,7 +205,7 @@
     
     .imgbanner1{
         height: 25%;
-        width: 75vw;
+        width: 100%;
         border-radius: 45px 45px 0px 0px;
         background-image:url('http://www.enjoymaringa.com.br/uploads/restaurantes/pizzaria-paulistana-capa-1464798116.jpg');
         background-position: center;
@@ -128,7 +215,7 @@
 
     .imgbanner2{
         height: 25%;
-        width: 75vw;
+        width: 100%;
         border-radius: 45px 45px 0px 0px;
         background-image:url('https://www.lopes.com.br/blog/wp-content/uploads/2017/01/Slide1.jpg');
         background-position: center;
@@ -138,7 +225,7 @@
 
     .imgbanner3{ 
         height: 25%;
-        width: 75vw;
+        width: 100%;
         border-radius: 45px 45px 0px 0px;
         background-image:url('https://www.melhoresdestinos.com.br/wp-content/uploads/2019/02/passagens-aereas-sao-paulo-capa2019-02-820x430.jpg');
         background-position: center;
@@ -146,6 +233,32 @@
         background-repeat: no-repeat;
     }
 
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu li {
+        background: green;
+        border-radius: 25px;
+        text-align: center;
+        border: 1.5px solid black;
+        font-size: 80%;
+        align-items: center;
+        max-width: 100%;
+        min-width: 50%;
+        justify-content: center;
+        box-shadow: 5px 10px rgb(51, 49, 49);
+        display:table;
+        margin-left: 1%;
+        margin-right: 1%;
+        flex-direction: column;
+    }
+    
+    body{
+        background-color: lightblue;
+    }
 
 }
 
