@@ -16,9 +16,9 @@ header {
     
 }
 
-footer {
+.footer {
     padding: 2px;
-    text-align: justify;
+    text-align: center;
     background: #00669f;
     color: white;
     font-size: 20px;
