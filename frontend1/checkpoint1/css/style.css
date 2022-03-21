@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
 
 @media screen and (min-width: 1280px) {
     header {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Rubik', sans-serif;
         padding: 12px;
         text-align: center;
         background: rgb(212, 72, 72);
@@ -84,7 +85,7 @@
 
 @media screen and (min-width: 431px) and (max-width: 1279px) {
     header {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Rubik', sans-serif;
         padding: 12px;
         text-align: center;
         background: rgb(212, 72, 72);
@@ -171,7 +172,7 @@
 
 @media screen and (max-width: 430px){
     header {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Rubik', sans-serif;
         padding: 12px;
         text-align: center;
         background: rgb(212, 72, 72);
