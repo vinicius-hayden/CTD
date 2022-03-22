@@ -75,20 +75,27 @@ input {
     height: 25px;
 }
 
-input[type=submit] {
+input[type=submit], input[type=reset] {
     width: 100%;
     height: 25px;
     border-radius: 25px;
 }
 
-input[type=button], input[type=submit], input[type=reset] {
+input[type=submit]{
     background-color: #04AA6D;
+}
+
+input[type=reset]{
+    background-color: gray;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
     border: none;
     color: white;
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 25px;
-  }
+}
 
 
