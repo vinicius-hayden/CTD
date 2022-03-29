@@ -58,3 +58,45 @@ banco.lista.push(new cadastro_banco("Alonso Wannan", "3151956165", "Conta Corren
 banco.lista.push( new cadastro_banco("Bendite Huggett", "2138105881", "Conta Poupança", 33196));
 
 console.log(banco.lista)
+
+// console.log(banco.lista)
+
+const array2 = [{nome: "lean", idade: 27}, {nome: "eze", idade:49}]
+
+function propUnica(lista,prop){
+    const array = [];
+    for(let i = 0; i< lista.length;i++){
+      const x = {}
+      x[prop] = lista[i][prop];
+      array.push(x);
+    }
+    return array;
+}
+  
+// propriedadeUnica(array2, "nome")
+
+//console.log(lista[0][prop])
+
+// propriedadeUnica(array2, "nome");
+
+let aluno = {
+    nome: "",
+    numero_aluno: null,
+    lista_de_notas: [],
+    calculador_media: function(nota1, nota2){
+        let media = (nota1+nota2)/2
+        return media
+    },
+    nota_solicitada: 6,
+    situacao_aluno: function resultadoAluno(nota_solicitada, nota1, nota2){
+        if(nota_solicitada < aluno.calculador_media(nota1,nota2)){
+            console.log("Passou");
+        }
+        else{
+            console.log("Recuperação");
+        }
+    }
+
+}
+
+// console.log(aluno.situacao_aluno(6,7,8));
