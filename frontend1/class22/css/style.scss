@@ -1,0 +1,33 @@
+$colorCaixa: rgb(162,162,207);
+
+body{
+    .banner{
+        background-image: url('https://wallpaperaccess.com/full/19067.jpg');
+        background-position: center;
+        background-size: 50%;
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100vw;
+    }
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .caixa{
+        background-color: blue;
+        height: 550px;
+        width: 550px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p{
+            background-color: pink;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+
+        }
+        &:hover{
+            background-color: aqua;
+        }
+    }
+}
