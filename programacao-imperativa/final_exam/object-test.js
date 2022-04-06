@@ -90,8 +90,6 @@ curso = {
        
 }
 
-console.log(curso.lista_estudantes) // Teste do passo 4
-
 const aluno4 = new Aluno("Tom Scharpling", 0, [10,10,5,10]); // Teste da função adicionar aluno do passo 4.
 curso.adicionarAluno(aluno4); // Teste da função adicionar aluno do passo 4.
 console.log(curso.lista_estudantes); //Teste do array criado para visualizar os alunos inseridos no array.
