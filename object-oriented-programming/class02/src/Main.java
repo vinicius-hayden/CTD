@@ -21,8 +21,8 @@ public class Main {
 
         System.out.println("Typed num1 value: " + num1);
         System.out.println("Typed num2 value: " + num2);
-        System.out.println("Typed num1 value: " + num3);
-        System.out.println("Typed num2 value: " + num4);
+        System.out.println("Typed num3 value: " + num3);
+        System.out.println("Typed num4 value: " + num4);
 
     }
 
