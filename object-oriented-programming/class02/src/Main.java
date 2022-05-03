@@ -13,6 +13,7 @@ public class Main {
         num1 = gets.nextInt();
         System.out.print("Type the value of num2: ");
         num2 = gets.nextInt();
+
         System.out.print("Type the value of num3: ");
         num3 = gets.nextFloat();
         System.out.print("Type the value of num4: ");
