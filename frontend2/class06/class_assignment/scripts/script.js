@@ -50,19 +50,43 @@ const listafelinos = [
     },
 ];
 
-const div = document.createElement('div');
-const div1 = div.setAttribute('class', 'item');
-const div1text= document.createTextNode(listafelinos[0].descricao);
-const h2 = document.createElement('h2');
-const divh2text = document.createTextNode(listafelinos[0].titulo);
-const imgdiv1 = document.createElement('img');
+let elementoPai = document.getElementById('elementoPai');
 
-document.body.appendChild(h2);
+window.onload = function() {
+    tudo_lista_felinos();
+}
 
-h2.appendChild(divh2text);
+function tudo_lista_felinos() {
 
-document.body.appendChild(div);
+    for(let felino of listafelinos) {
 
-imgdiv1.setAttribute('src', listafelinos[0].imgURL); 
+        let card =
+        `<div class = "item">
+            <img src="${felino.imgURL}">
+            <h2>${felino.titulo}</h2>
+            <p>${felino.descricao}</p>
+        </div> `
 
-div.appendChild(div1text);
+        let criarEm = document.createElement('div');
+        criarEm.innerHTML = card;
+        elementoPai.appendChild(criarEm);
+    }
+}
+
+
+// const div = document.createElement('div');
+// const div1 = div.setAttribute('class', 'item');
+// const div1text= document.createTextNode(listafelinos[0].descricao);
+// const h2 = document.createElement('h2');
+// const divh2text = document.createTextNode(listafelinos[0].titulo);
+// const imgdiv1 = document.createElement('img');
+
+// document.body.appendChild(h2);
+
+// h2.appendChild(divh2text);
+
+// document.body.appendChild(div);
+
+// imgdiv1.setAttribute('src', listafelinos[0].imgURL); 
+
+// div.appendChild(div1text);
