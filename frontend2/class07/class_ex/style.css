@@ -1,0 +1,37 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: rgb(255, 255, 255);
+    font-family: "Crafty Girls", cursive;
+    height: 100vh;
+    background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+   }
+    
+   .conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+    
+   .cartao {
+    margin: 1rem;
+    border-radius: 5px;
+    box-shadow: 5px 5px 8px;
+    border: 8px solid rgb(54, 53, 53);
+    transition: transform 0.2s linear;
+    -webkit-transition: transform 0.2s linear;
+    -moz-transition: transform 0.2s linear;
+    -ms-transition: transform 0.2s linear;
+    -o-transition: transform 0.2s linear;
+}
+    
+.cartao:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
