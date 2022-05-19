@@ -12,26 +12,14 @@ urlImagens.forEach(function(url, index) {
 });
 
 const image1 = document.getElementById('imagem-1').outerHTML;
-// const image2 = document.getElementById('imagem-2').innerHTML;
-// const image3 = document.getElementById('imagem-3').innerHTML;
+const image2 = document.getElementById('imagem-2').outerHTML;
+const image3 = document.getElementById('imagem-3').outerHTML;
 
-// image1.style.backgroundColor = 'blue';
-// image2.style.backgroundColor = 'red';
-// image3.style.backgroundColor = 'orange';
+const new_html_image1 = `<a href="${urlImagens[0]}" target="_blank">${image1}</a>`;
+document.getElementById("imagem-1").outerHTML = new_html_image1;
 
-const new_html = `<a href="youtube.com">${image1}</a>`;
-document.getElementById("imagem-1").outerHTML = new_html;
+const new_html_image2 = `<a href="${urlImagens[1]}" target="_blank">${image2}</a>`;
+document.getElementById("imagem-2").outerHTML = new_html_image2;
 
-
-
-
-
-
-// image1.append(document.createElement('a'));
-// image2.append(document.createElement('a'));
-// image3.append(document.createElement('a'));
-
-
-
-
-
+const new_html_image3 = `<a href="${urlImagens[2]}" target="_blank">${image3}</a>`;
+document.getElementById("imagem-3").outerHTML = new_html_image3;
