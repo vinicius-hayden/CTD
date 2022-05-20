@@ -1,0 +1,5 @@
+[Funcionário| #name: string]
+[Funcionário] ^ [Administrativo]
+[Funcionário] ^ [Acadêmico] 1-leciona*> [Matéria]
+[Aluno]<é composta de 1..*-1++[Turma| +nome:string]*++-*> [Matéria| +nome:string]
+[Aluno|+name: string;+surname: string|aprovacao(nota1Semestre,nota2Semestre)]
