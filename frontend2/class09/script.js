@@ -11,15 +11,21 @@ urlImagens.forEach(function(url, index) {
     imagem.setAttribute("src", url)
 });
 
-const image1 = document.getElementById('imagem-1').outerHTML;
-const image2 = document.getElementById('imagem-2').outerHTML;
-const image3 = document.getElementById('imagem-3').outerHTML;
+urlImagens.forEach(function (url, index){
+    let imageHTML = document.getElementById(`imagem-${index+1}`).outerHTML;
+    let newImageHTML = `<a href="${url}" target="_blank">${imageHTML}</a>`;
+    document.getElementById(`imagem-${index+1}`).outerHTML = newImageHTML;
+})
 
-const new_html_image1 = `<a href="${urlImagens[0]}" target="_blank">${image1}</a>`;
-document.getElementById("imagem-1").outerHTML = new_html_image1;
+// const image1 = document.getElementById('imagem-1').outerHTML;
+// const image2 = document.getElementById('imagem-2').outerHTML;
+// const image3 = document.getElementById('imagem-3').outerHTML;
 
-const new_html_image2 = `<a href="${urlImagens[1]}" target="_blank">${image2}</a>`;
-document.getElementById("imagem-2").outerHTML = new_html_image2;
+// const new_html_image1 = `<a href="${urlImagens[0]}" target="_blank">${image1}</a>`;
+// document.getElementById("imagem-1").outerHTML = new_html_image1;
 
-const new_html_image3 = `<a href="${urlImagens[2]}" target="_blank">${image3}</a>`;
-document.getElementById("imagem-3").outerHTML = new_html_image3;
+// const new_html_image2 = `<a href="${urlImagens[1]}" target="_blank">${image2}</a>`;
+// document.getElementById("imagem-2").outerHTML = new_html_image2;
+
+// const new_html_image3 = `<a href="${urlImagens[2]}" target="_blank">${image3}</a>`;
+// document.getElementById("imagem-3").outerHTML = new_html_image3;
