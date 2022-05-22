@@ -1,0 +1,5 @@
+[Employee| #name: String; #gender: String; #jobPosition: String; #salary: double; #birth_date: Date; -clockInList: List| +clockIn()]
+[Employee] ^ [Administrative| +department: String]
+[Employee] ^ [Faculty | teachingForLevel: String] 1-teaches* [Subject]
+[Student]<is composed by..*-1++[Classroom| +grade:String| add(Subject); add(Student)]*++-*> [Subject| +name:String; +studyField: String]
+[Student|#name: String; #semesterGrades: list|-isApproved()]
