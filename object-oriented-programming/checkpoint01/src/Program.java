@@ -1,14 +1,25 @@
 import entities.*;
 
-import java.util.Calendar;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 import java.util.Date;
 
 public class Program {
 
-    public static void main(String[] args) throws InterruptedException {
+    private static Date stringToDate(String dateAsString) throws ParseException {
+
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        return dateFormat.parse(dateAsString);
+
+    }
+
+    public static void main(String[] args) throws InterruptedException, ParseException {
         // Employee class test
-        Employee libraryEmployee = new Administrative("John Smith", "M", "CEO", 5000, new Date(1, Calendar.JUNE, 15), "Library");
+        Date birthdate = stringToDate("1970-03-27");
+        Employee libraryEmployee = new Administrative("John Smith", "M", "CEO", 5000, birthdate, "Library");
+        System.out.println(libraryEmployee);
 
         libraryEmployee.clockIn();
         Thread.sleep(1000);
@@ -16,11 +27,12 @@ public class Program {
         libraryEmployee.clockInReport();
 
         Subject biology = new Subject("Biology", "Science");
-        Employee biologyTeacher = new Faculty("Henry Richard", "M", "Teacher", 2500.00, new Date(1982-1900, Calendar.JANUARY, 5), "High-school", biology);
+        birthdate = stringToDate("1982-01-05");
+        Employee biologyTeacher = new Faculty("Henry Richard", "M", "Teacher", 2500.00, birthdate, "High-school", biology);
         System.out.println(biologyTeacher);
-
+        birthdate = stringToDate("1992-05-10");
         Subject math = new Subject("Math", "STEM");
-        Employee mathTeacher = new Faculty("Ada Lovelace", "F", "Teacher", 2500.00, new Date(1992-1900, Calendar.MAY, 28), "Elementary School", math);
+        Employee mathTeacher = new Faculty("Ada Lovelace", "F", "Teacher", 2500.00, birthdate, "Elementary School", math);
         System.out.println(mathTeacher);
 
         Student student1 = new Student("John Smith");
