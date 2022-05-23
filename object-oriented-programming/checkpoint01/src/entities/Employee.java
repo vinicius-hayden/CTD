@@ -11,7 +11,7 @@ public abstract class Employee {
     protected String jobPosition;
     protected double salary;
     protected Date birthdate;
-    private List<Date> clockInList;
+    private final List<Date> clockInList;
 
     public Employee(String name, String gender, String jobPosition, double salary, Date birthdate) {
         this.name = name;
