@@ -1,5 +1,6 @@
-[Employee| #name: String; #gender: String; #jobPosition: String; #salary: double; #birthdate: Date; -clockInList: List| +clockIn()]
+[Employee| #name: String; #gender: String; #jobPosition: String; #salary: double; #birthdate: Date; -clockInList: List| +clockIn()
++clockInReport]
 [Employee] ^ [Administrative| -department: String]
 [Employee] ^ [Faculty | -teachingForLevel: String] 1-teaches* [Subject]
-[Student]<is composed by..*-1++[Classroom| -gradeDescription:String| add(Subject); add(Student)]*++-*> [Subject| -name:String; -studyField: String]
+[Student]<is composed by..*-1++[Classroom| -gradeDescription:String| add(subject: Subject); add(student: Student)]*++-*> [Subject| -name:String; -studyField: String]
 [Student|#name: String; #semesterGrades: list|-isApproved()]
