@@ -84,7 +84,7 @@ public class Program {
         System.out.println(eleventhGrade);
         System.out.println(tenthGrade);
         System.out.println(ninthGrade);
-        
+
     }
 
 }
