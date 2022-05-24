@@ -1,0 +1,7 @@
+Uma escola pretende implementar e/ou sistematizar o seu esquema de funcionários, alunos, matérias, professores e corpo docente, equipe pedagógica e etc...
+Com isso, são divulgados alguns dados... Todos os funcionários da Escola possuem algumas informações em comum, como por exemplo nome, gênero, data de nascimento,
+salário e a profissão que elas exercem dentro da Escola, também todos os funcionários tem que bater o ponto (Clock In) assim que iniciam sua jornada de trabalho.
+Os funcionários também são dividos em duas categorias, os acadêmicos(Faculty) como professores e toda a equipe docente, e os que fazem parte da área mais 
+adminstrativa(Adminstrative) que cuidam da gestão, como o RH, o diretor ou diretora... 
+Os professores, por sua vez, tem a denominação para qual grau eles dão aula (Ensino Médio, Fundamental) e possuem uma matéria.
+Os alunos possuem também algumas informações em comum, como nome e uma lista de notas, e fazem parte de salas de aula que possuem matérias, que por sua vez possuem professoras dessas matérias.
