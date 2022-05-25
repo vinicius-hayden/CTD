@@ -29,10 +29,3 @@ window.onload=function(){
         }
     })
 }
-
-
-
-
-
-
-
