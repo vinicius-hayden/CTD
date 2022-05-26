@@ -1,6 +1,9 @@
 window.onload=function(){
     const button = document.getElementById("button");
-    
+    const mainDiv = document.createElement('div');
+    document.body.appendChild(mainDiv);
+    mainDiv.setAttribute('id', 'mainDiv');
+
     button.addEventListener('click', function(){
     
         let titleInput = document.getElementById("titleInput").value;
@@ -11,21 +14,21 @@ window.onload=function(){
             alert("Please, inform every input");
         }
         else {
-            const div = document.createElement('div');
+            const divCard = document.createElement('div');
             const h1 = document.createElement('h1');
             const img = document.createElement('img');
             const p = document.createElement('p');
             
-            document.body.appendChild(div);
-            div.setAttribute('id', 'divCard');
+            mainDiv.appendChild(divCard);
+            divCard.setAttribute('id', 'divCard');
+            
+            divCard.appendChild(h1);
+            divCard.appendChild(img);
+            divCard.appendChild(p);
     
-            div.appendChild(h1);
-            div.appendChild(img);
-            div.appendChild(p);
-    
-            h1.innerHTML = `<h1>${titleInput}</h1>`;
+            h1.innerHTML = titleInput;
             img.setAttribute('src', `${urlInput}`);
-            p.innerHTML = `<p>${description}</p>`;
+            p.innerHTML = description;
         }
     })
 }
