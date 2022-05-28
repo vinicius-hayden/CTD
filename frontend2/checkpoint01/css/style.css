@@ -15,6 +15,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 #form {
@@ -70,12 +71,13 @@ body {
 }
 
 #divCard {
+    flex-direction: row;
     margin: 2%;
     margin-top: 30px;
     background-color: rgb(40,40,40);
     border-radius: 12px;
     color: white;
-    max-width: 250px;
+    width: 250px;
     box-shadow: 0px 10px 13px -7px #000000, 13px 5px 9px 4px rgba(0,0,0,0);
 }
 
@@ -92,14 +94,35 @@ body {
 
 #divCard p {
     margin: 3px;
+    width: 250px;
+    word-wrap: break-word;
 }
 
-#mainDiv {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    max-height: 500px;
-    width: 325px;
-    overflow: scroll;
+@media screen and (max-height:679px) {
+    #form button{
+        margin-top: 25px;
+        padding: 3px;
+        width: 125px;
+    }
+    .form-box{
+        width: 275px;
+    }
+    .form-box input {
+        width: 150px;
+    }
+
+}
+
+@media screen and (max-width:369px) {
+    #form button{
+        margin-top: 25px;
+        padding: 3px;
+        width: 125px;
+    }
+    .form-box{
+        width: 275px;
+    }
+    .form-box input {
+        width: 150px;
+    }
 }
