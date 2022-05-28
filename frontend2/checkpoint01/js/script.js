@@ -1,8 +1,5 @@
 window.onload=function(){
     const button = document.getElementById("button");
-    const mainDiv = document.createElement('div');
-    document.body.appendChild(mainDiv);
-    mainDiv.setAttribute('id', 'mainDiv');
 
     button.addEventListener('click', function(){
     
@@ -19,7 +16,7 @@ window.onload=function(){
             const img = document.createElement('img');
             const p = document.createElement('p');
             
-            mainDiv.appendChild(divCard);
+            document.body.appendChild(divCard);
             divCard.setAttribute('id', 'divCard');
             
             divCard.appendChild(h1);
