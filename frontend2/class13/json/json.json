@@ -1,0 +1,29 @@
+[
+    {
+        "nome": "John",
+        "idade": 20,
+        "localization": "Minessota",
+        "profission": {
+            "Programmer": "Google"
+        },
+        "hobbies": [
+            "Play",
+            "Program",
+            "Listen To Music"
+        ]
+    },
+    {
+        "nome": "Richard",
+        "idade": 25,
+        "localization": "Minessota",
+        "profission": {
+            "Programmer": "Amazon",
+            "CTO": "Apple"
+        },
+        "hobbies": [
+            "Play",
+            "Program",
+            "Listen To Music"
+        ]
+    }
+]
