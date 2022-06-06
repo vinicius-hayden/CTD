@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/arrayList/arrayList.iml" filepath="$PROJECT_DIR$/arrayList/arrayList.iml" />
       <module fileurl="file://$PROJECT_DIR$/class14.iml" filepath="$PROJECT_DIR$/class14.iml" />
+      <module fileurl="file://$PROJECT_DIR$/classExample/classExample.iml" filepath="$PROJECT_DIR$/classExample/classExample.iml" />
     </modules>
   </component>
 </project>
