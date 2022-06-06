@@ -1,0 +1,6 @@
+@mixin flexStart($hor, $vert, $direction) {
+    display: flex;
+    justify-content: $hor;
+    align-items: $vert;
+    flex-direction: $direction;
+}
