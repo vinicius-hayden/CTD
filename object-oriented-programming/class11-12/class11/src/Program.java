@@ -19,5 +19,5 @@ public class Program {
         System.out.println(cannon);
         cannon.print();
     }
-    
+
 }
