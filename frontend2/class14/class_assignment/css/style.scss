@@ -1,6 +1,66 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400&display=swap');
 @import './functions';
 
-body{
-    @include reset();
+* {
+  @include reset();
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background-color: #1572A1;
+  form {
+    background-color: white;
+    width: 30vw;
+    height: fit-content;
+    padding: 2em;
+    margin: 4em 35vw;
+    border-radius: 10px;
+    h1 {
+      margin-bottom: .5em;
+    }
+    input:not([type=checkbox]):not([type=radio]) {
+      position: relative;
+      width: 100%;
+      padding: .5em;
+      border-radius: .2em;
+      border: 1px solid transparent;
+      background-color: #B1D0E0;
+      margin-bottom: 1em;
+    }
+    
+    input:invalid([type=radio]) {
+      border: 1px solid red;
+    }
+    fieldset {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      border: none;
+      border: 1px solid rgba(137, 43, 226, 0.205);
+      margin-top: 1em;
+      box-sizing: border-box;
+      padding: 1em;
+      legend {
+        padding: 0 1em;
+      }
+      label {
+        display: block;
+        width: 9em;
+      }
+    }
+    input[type=checkbox] {
+      margin-right: 1em;
+      margin-bottom: .7em;
+    }
+    button {
+      background-color: #1572A1;
+      color: white;
+      font-size: 1.1em;
+      padding: .5em 1em;
+      border: none;
+      margin-top: 1em;
+      cursor: pointer;
+    }
+  }
 }
