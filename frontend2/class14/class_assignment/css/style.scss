@@ -3,12 +3,19 @@
 
 * {
   @include reset();
+  scroll-behavior: smooth;
 }
 
 body {
   display: flex;
   min-height: 100vh;
-  background-color: #1572A1;
+  background: rgb(0,233,231);
+  background: linear-gradient(90deg, rgba(0,233,231,1) 9%, rgba(49,49,217,1) 57%);
+  .wrong {
+    color: red;
+    font-size: 15px;
+    font-weight: bold;
+  }
   form {
     background-color: white;
     width: 30vw;
@@ -23,7 +30,7 @@ body {
       position: relative;
       width: 100%;
       padding: .5em;
-      border-radius: .2em;
+      border-radius: 5px;
       border: 1px solid transparent;
       background-color: #B1D0E0;
       margin-bottom: 1em;
@@ -61,6 +68,7 @@ body {
       border: none;
       margin-top: 1em;
       cursor: pointer;
+      border-radius: 10px;
     }
   }
 }

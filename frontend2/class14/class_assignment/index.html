@@ -11,118 +11,119 @@
 
 <body>
     <form action="/" method="get" id="form">
-        <h1>Inscrição para Hogwarts</h1>
-        <div id="error"></div>
+        <h1>Hogwarts Application</h1>
+        <div id="errorName"></div>
         <label>
-            Nome completo:
-            <input type="text" class="error" name="nome" id="name" autocomplete="off" required />
+            Full name:
+            <input type="text" class="error" name="nome" id="name" autocomplete="off"/>
         </label>
+        <div id="errorPass"></div>
         <label>
-            Senha:
+            Password:
             <input type="password" name="pass" id="pass" />
         </label>
         <label>
-            Telefone:
+            Telephone Number:
             <input type="text" name="tel" id="tel" />
         </label>
-        
+        <div id="errorHobbies"></div>
         <fieldset>
-            <legend>Hobbies: (No máximo 4)</legend>
+            <legend>Hobbies: (Max 4)</legend>
             <label>
                 <input type="checkbox" name="hobbies" id="hobbiesNetflix" />
                 Netflix
             </label>
             <label>
-                <input type="checkbox" name="hobbies" id="hobbiesFutebol" />
-                Futebol
+                <input type="checkbox" name="hobbies" id="hobbiesSoccer" />
+                Soccer
             </label>
             <label>
-                <input type="checkbox" name="hobbies" id="hobbiesTenis" />
-                Tênis
+                <input type="checkbox" name="hobbies" id="hobbiesTennis" />
+                Tennis
             </label>
             <label>
-                <input type="checkbox" name="hobbies" id="hobbiesAcademia" />
-                Academia
+                <input type="checkbox" name="hobbies" id="hobbiesGym" />
+                Gym
             </label>
             <label>
                 <input type="checkbox" name="hobbies" id="hobbiesVideoGame" />
                 Video Game
             </label>
             <label>
-                <input type="checkbox" name="hobbies" id="hobbiesCozinha" />
-                Cozinha
+                <input type="checkbox" name="hobbies" id="hobbiesCooking" />
+                Cooking
             </label>
             <label>
-                <input type="checkbox" name="hobbies" id="hobbiesProgramacao" />
-                Programação
+                <input type="checkbox" name="hobbies" id="hobbiesProgramming" />
+                Programming
             </label>
             <label>
-                <input type="checkbox" name="hobbies" id="hobbiesDesenho" />
-                Desenho
+                <input type="checkbox" name="hobbies" id="hobbiesDrawing" />
+                Drawing
             </label>
             <label>
-                <input type="checkbox" name="hobbies" id="hobbiesPintura" />
-                Pintura
+                <input type="checkbox" name="hobbies" id="hobbiesPainting" />
+                Painting
             </label>
             <label>
-                <input type="checkbox" name="hobbies" id="hobbiesGuitarra" />
-                Guitarra
+                <input type="checkbox" name="hobbies" id="hobbiesGuitar" />
+                Guitar
             </label>
             <label>
-                <input type="checkbox" name="hobbies" id="hobbiesTeclado" />
-                Teclado
+                <input type="checkbox" name="hobbies" id="hobbiesKeyboard" />
+                Keyboard
             </label>
             <label>
-                <input type="checkbox" name="hobbies" id="hobbiesCostura" />
-                Costura
+                <input type="checkbox" name="hobbies" id="hobbiesSewing" />
+                Sewing
             </label>
             <label>
-                <input type="checkbox" name="hobbies" id="Leitura" />
-                Leitura
+                <input type="checkbox" name="hobbies" id="hobbiesReading" />
+                Reading
             </label>
             <label>
-                <input type="checkbox" name="hobbies" id="hobbiesEscrever" />
-                Escrever
+                <input type="checkbox" name="hobbies" id="hobbiesWriting" />
+                Writing
             </label>
         </fieldset>
-        
+        <div id="errorCountry"></div>
         <fieldset>
-            <legend>Nacionalidade</legend>
+            <legend>Home country</legend>
             <label>
-                <input type="radio" name="nacionalidade" id="nacionalidadeArgentina" />
+                <input type="radio" name="nationality" id="nationalityArgentina" />
                 Argentina
             </label>
             <label>
-                <input type="radio" name="nacionalidade" id="nacionalidadeColombiana" />
+                <input type="radio" name="nationality" id="nationalityColombiana" />
                 Colombia
             </label>
             <label>
-                <input type="radio" name="nacionalidade" id="nacionalidadeBrasileira" />
-                Brasil
+                <input type="radio" name="nationality" id="nationalityBrasileira" />
+                Brazil
             </label>
             <label>
-                <input type="radio" name="nacionalidade" id="nacionalidadeChilena" />
+                <input type="radio" name="nationality" id="nationalityChilena" />
                 Chile
             </label>
             <label>
-                <input type="radio" name="nacionalidade" id="nacionalidadeVenezuelano" />
+                <input type="radio" name="nationality" id="nationalityVenezuelano" />
                 Venezuela
             </label>
             <label>
-                <input type="radio" name="nacionalidade" id="nacionalidadePeru" />
-                Perú
+                <input type="radio" name="nationality" id="nationalityPeru" />
+                Peru
             </label>
             <label>
-                <input type="radio" name="nacionalidade" id="nacionalidadeUruguai" />
+                <input type="radio" name="nationality" id="nationalityUruguai" />
                 Uruguai
             </label>
             <label>
-                <input type="radio" name="nacionalidade" id="nacionalidadeParaguai" />
+                <input type="radio" name="nationality" id="nationalityParaguai" />
                 Paraguai
             </label>
         </fieldset>
         
-        <button id="button">Inscrever-me</button>
+        <button id="button" type="submit">Subscribe</button>
     </form>
     <script src="./js/script.js"></script>
 </body>

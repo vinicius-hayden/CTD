@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   font-family: 'Nunito Sans', sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -10,7 +11,15 @@ body {
   display: -ms-flexbox;
   display: flex;
   min-height: 100vh;
-  background-color: #1572A1;
+  background: #00e9e7;
+  background: -webkit-gradient(linear, left top, right top, color-stop(9%, #00e9e7), color-stop(57%, #3131d9));
+  background: linear-gradient(90deg, #00e9e7 9%, #3131d9 57%);
+}
+
+body .wrong {
+  color: red;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 body form {
@@ -32,7 +41,7 @@ body form input:not([type=checkbox]):not([type=radio]) {
   position: relative;
   width: 100%;
   padding: .5em;
-  border-radius: .2em;
+  border-radius: 5px;
   border: 1px solid transparent;
   background-color: #B1D0E0;
   margin-bottom: 1em;
@@ -79,5 +88,6 @@ body form button {
   border: none;
   margin-top: 1em;
   cursor: pointer;
+  border-radius: 10px;
 }
 /*# sourceMappingURL=style.css.map */
