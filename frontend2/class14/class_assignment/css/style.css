@@ -1,19 +1,37 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   scroll-behavior: smooth;
 }
 
+.logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.logo img {
+  height: 55px;
+  width: 55px;
+}
+
 body {
+  font-family: 'Poppins', sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   min-height: 100vh;
-  background: #00e9e7;
-  background: -webkit-gradient(linear, left top, right top, color-stop(9%, #00e9e7), color-stop(57%, #3131d9));
-  background: linear-gradient(90deg, #00e9e7 9%, #3131d9 57%);
+  background-image: url("https://wallpaperaccess.com/full/871025.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 body .wrong {
@@ -24,13 +42,15 @@ body .wrong {
 
 body form {
   background-color: white;
-  width: 30vw;
+  width: 375px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   padding: 2em;
   margin: 4em 35vw;
   border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 15px black;
+          box-shadow: 3px 3px 15px black;
 }
 
 body form h1 {
@@ -59,7 +79,7 @@ body form fieldset {
       flex-wrap: wrap;
   width: 100%;
   border: none;
-  border: 1px solid rgba(137, 43, 226, 0.205);
+  border: 1px solid black;
   margin-top: 1em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -80,7 +100,19 @@ body form input[type=checkbox] {
   margin-bottom: .7em;
 }
 
-body form button {
+body form #buttonDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body form #buttonDiv button {
   background-color: #1572A1;
   color: white;
   font-size: 1.1em;
@@ -89,5 +121,12 @@ body form button {
   margin-top: 1em;
   cursor: pointer;
   border-radius: 10px;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+body form #buttonDiv button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 /*# sourceMappingURL=style.css.map */

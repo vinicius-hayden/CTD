@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 @import './functions';
 
 * {
@@ -6,11 +6,18 @@
   scroll-behavior: smooth;
 }
 
+.logo {
+  @include center();
+  img{
+  height: 55px;
+  width: 55px;
+}
+}
 body {
+  font-family: 'Poppins', sans-serif;
   display: flex;
   min-height: 100vh;
-  background: rgb(0,233,231);
-  background: linear-gradient(90deg, rgba(0,233,231,1) 9%, rgba(49,49,217,1) 57%);
+  @include backgroundImage();
   .wrong {
     color: red;
     font-size: 15px;
@@ -18,11 +25,12 @@ body {
   }
   form {
     background-color: white;
-    width: 30vw;
+    width: 375px;
     height: fit-content;
     padding: 2em;
     margin: 4em 35vw;
     border-radius: 10px;
+    box-shadow: 3px 3px 15px black;
     h1 {
       margin-bottom: .5em;
     }
@@ -44,7 +52,7 @@ body {
       flex-wrap: wrap;
       width: 100%;
       border: none;
-      border: 1px solid rgba(137, 43, 226, 0.205);
+      border: 1px solid black;
       margin-top: 1em;
       box-sizing: border-box;
       padding: 1em;
@@ -60,15 +68,22 @@ body {
       margin-right: 1em;
       margin-bottom: .7em;
     }
-    button {
-      background-color: #1572A1;
-      color: white;
-      font-size: 1.1em;
-      padding: .5em 1em;
-      border: none;
-      margin-top: 1em;
-      cursor: pointer;
-      border-radius: 10px;
+    #buttonDiv{
+      @include center();
+      button {
+        background-color: #1572A1;
+        color: white;
+        font-size: 1.1em;
+        padding: .5em 1em;
+        border: none;
+        margin-top: 1em;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: 0.1s;
+        &:hover{
+          transform: scale(1.1);
+        }
+      }
     }
   }
 }

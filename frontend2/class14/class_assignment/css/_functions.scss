@@ -1,5 +1,40 @@
 @mixin reset() {
-    margin: 0;
-    padding: 0;
-    font-family: 'Nunito Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+@mixin center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin backgroundImage() {
+  background-image: url("https://wallpaperaccess.com/full/871025.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin backgroundColor() {
+  background: rgb(209, 26, 26);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(209, 26, 26, 1) 0%,
+    rgba(75, 203, 171, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(209, 26, 26, 1) 0%,
+    rgba(75, 203, 171, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(209, 26, 26, 1) 0%,
+    rgba(75, 203, 171, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d11a1a",endColorstr="#fcb045",GradientType=1);
 }
