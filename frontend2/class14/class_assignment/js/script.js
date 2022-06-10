@@ -22,10 +22,14 @@ function isValidName(name) {
   return /^[a-zA-Z]+(?:\s[a-zA-Z]+)+$/.test(name);
 }
 
+function insertAfter(newNode, referenceNode) {
+  referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
+
 function checkUsername() {
   let errorElement = document.getElementById("errorName");
   let errorMessage = [];
-
+  
   if (username.value.trim() === "" || username.value == null) {
     errorMessage.push("This field is required");
     errorElement.classList.add("wrong");
@@ -47,6 +51,17 @@ function checkUsername() {
     window.scrollTo(0, 0);
     return false;
   }
+  
+  username.style.setProperty('border', 'green 2px solid');
+  let failIcon = document.getElementById('failName');
+  let successIcon = document.getElementById('successName');
+  
+  successIcon.style.visibility = 'visible';
+  failIcon.style.visibility = 'hidden';
+
+  if (errorElement.length != 0) {
+    errorElement.innerText = '';
+  }
   return true;
 }
 
@@ -56,20 +71,20 @@ function checkPassword() {
 
   if (password.value.search(/[a-z]/) < 0) {
     errorMessage.push(
-      "Your password must contain at least one lowercase letter."
+      "Your password must contain at least one lowercase letter"
     );
   }
   if (password.value.search(/[A-Z]/) < 0) {
     errorMessage.push(
-      "Your password must contain at least one uppercase letter."
+      "Your password must contain at least one uppercase letter"
     );
   }
   if (password.value.search(/[0-9]/) < 0) {
-    errorMessage.push("Your password must contain at least one digit.");
+    errorMessage.push("Your password must contain at least one digit");
   }
   if (password.value.search(/[\!\@\#\$\%\^\&\*\(\)\_\+\.\,\;\:\-]/) < 0) {
     errorMessage.push(
-      "Your password must contain at least one special character."
+      "Your password must contain at least one special character"
     );
   }
 
@@ -78,6 +93,15 @@ function checkPassword() {
     errorElement.classList.add("wrong");
     window.scrollTo(0, 0);
     return false;
+  }
+  password.style.setProperty('border', 'green 2px solid');
+  let label = document.getElementById('labelPass');
+  username.style.setProperty('border', 'green 2px solid');
+  let icon = document.createElement('i');
+  icon.classList.add('fa-solid', 'fa-circle-check');
+  label.appendChild(icon);
+  if (errorElement.length != 0) {
+    errorElement.innerText = '';
   }
   return true;
 }
@@ -95,25 +119,24 @@ function checkHobbies() {
   let errorMessage = [];
 
   if (isChecked(hobbiesVideoGame) && isChecked(hobbiesCooking)) {
-    errorMessage.push("This combination is not allowed");
+    errorMessage.push("Video Game + Cooking is not allowed");
     errorElement.classList.add("wrong");
     errorElement.innerText = errorMessage;
     window.scrollTo(0, 0);
     return false;
   }
   if (isChecked(hobbiesGuitar) && isChecked(hobbiesReading)) {
-    errorMessage.push("This combination is not allowed");
+    errorMessage.push("Guitar + Reading is not allowed");
     errorElement.classList.add("wrong");
     errorElement.innerText = errorMessage;
     window.scrollTo(0, 0);
     return false;
   }
   if (isChecked(hobbiesNetflix) && isChecked(hobbiesSewing)) {
-    errorMessage.push("This combination is not allowed");
+    errorMessage.push("Netflix + Sewing is not allowed");
     errorElement.classList.add("wrong");
     errorElement.innerText = errorMessage;
     window.scrollTo(0, 0);
-    errorMessage.push("This combination is not allowed");
     return false;
   }
   return true;
@@ -157,8 +180,14 @@ function checkCountry() {
 
 form.addEventListener("submit", (event) => {
   if (!checkUsername()) {
+    let failIcon = document.getElementById('failName');
+    let successIcon = document.getElementById('successName');
+    username.style.setProperty('border', 'red 2px solid');
+    successIcon.style.visibility = 'hidden';
+    failIcon.style.visibility = 'visible';
     event.preventDefault();
   } else if (!checkPassword()) {
+    password.style.setProperty('border', 'red 2px solid');
     event.preventDefault();
   } else if (!checkHobbies()) {
     event.preventDefault();
