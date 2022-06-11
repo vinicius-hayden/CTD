@@ -15,4 +15,44 @@ public class Player {
         this.isHurt = isHurt;
         this.titular = titular;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getShirtNumber() {
+        return shirtNumber;
+    }
+
+    public void setShirtNumber(int shirtNumber) {
+        this.shirtNumber = shirtNumber;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public boolean isHurt() {
+        return isHurt;
+    }
+
+    public void setHurt(boolean hurt) {
+        isHurt = hurt;
+    }
+
+    public boolean isTitular() {
+        return titular;
+    }
+
+    public void setTitular(boolean titular) {
+        this.titular = titular;
+    }
 }

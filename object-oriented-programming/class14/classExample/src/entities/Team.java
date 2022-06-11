@@ -8,6 +8,11 @@ public class Team {
     private String name;
     private ArrayList<Player> playerArrayList = new ArrayList<>();
 
+    public Team(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public int getId() {
         return id;
     }
@@ -24,11 +29,31 @@ public class Team {
         this.name = name;
     }
 
-    public ArrayList<Player> getPlayerArrayList() {
-        return playerArrayList;
+    public void addPlayer(Player player) {
+        playerArrayList.add(player);
     }
 
-    public void setPlayerArrayList(ArrayList<Player> playerArrayList) {
-        this.playerArrayList = playerArrayList;
+    public void showTitularPlayer() {
+        for(Player player: playerArrayList) {
+            if (player.isTitular()) {
+                System.out.println(
+                        "ID" + player.getId() +
+                        " - Name: " + player.getName() +
+                        "- Shirt: " + player.getShirtNumber()
+                );
+            }
+        }
     }
+
+    public int howManyHurtPlayers() {
+        int i = 0;
+        for(Player player: playerArrayList) {
+            if (player.isHurt() && player.isTitular()) {
+                i++;
+            }
+        }
+        return i;
+    }
+
+
 }
