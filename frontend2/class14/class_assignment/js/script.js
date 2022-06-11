@@ -69,6 +69,12 @@ function checkPassword() {
   let errorElement = document.getElementById("errorPass");
   let errorMessage = [];
 
+  if (password.value.trim == '' || password.value == null) { 
+    errorMessage.push("This field is required");
+    errorElement.classList.add("wrong");
+    errorElement.innerText = errorMessage;
+    window.scrollTo(0, 0);
+  }
   if (password.value.search(/[a-z]/) < 0) {
     errorMessage.push(
       "Your password must contain at least one lowercase letter"
@@ -119,8 +125,8 @@ function checkTel() {
   let errorElement = document.getElementById('errorTel');
   let errorMessage = [];
 
-  if(telephone.value.trim() == "") { 
-    errorMessage.push('Please, fill in');
+  if(telephone.value.trim() == "" || telephone.value == null) { 
+    errorMessage.push('This field is required');
     let failIconTel = document.getElementById('failTel');
     let successIconTel = document.getElementById('successTel');
     successIconTel.style.visibility = 'hidden';
