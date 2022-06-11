@@ -29,9 +29,17 @@ body {
   display: -ms-flexbox;
   display: flex;
   min-height: 100vh;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-image: url("https://wallpaperaccess.com/full/871025.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 body .wrong {
@@ -42,13 +50,12 @@ body .wrong {
 
 body form {
   background-color: white;
-  width: 375px;
+  width: 425px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   padding: 2em;
-  margin: 4em 35vw;
-  border-radius: 10px;
+  border-radius: 7px;
   -webkit-box-shadow: 3px 3px 15px black;
           box-shadow: 3px 3px 15px black;
 }
@@ -57,9 +64,29 @@ body form h1 {
   margin-bottom: .5em;
 }
 
+body form #labelName, body form #labelPass, body form #labelTel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body form #labelName #nameIcons .fa-circle-check, body form #labelName #passIcons .fa-circle-check, body form #labelName #telIcons .fa-circle-check, body form #labelPass #nameIcons .fa-circle-check, body form #labelPass #passIcons .fa-circle-check, body form #labelPass #telIcons .fa-circle-check, body form #labelTel #nameIcons .fa-circle-check, body form #labelTel #passIcons .fa-circle-check, body form #labelTel #telIcons .fa-circle-check {
+  margin: 1px;
+  position: absolute;
+  color: green;
+  visibility: hidden;
+}
+
+body form #labelName #nameIcons .fa-circle-xmark, body form #labelName #passIcons .fa-circle-xmark, body form #labelName #telIcons .fa-circle-xmark, body form #labelPass #nameIcons .fa-circle-xmark, body form #labelPass #passIcons .fa-circle-xmark, body form #labelPass #telIcons .fa-circle-xmark, body form #labelTel #nameIcons .fa-circle-xmark, body form #labelTel #passIcons .fa-circle-xmark, body form #labelTel #telIcons .fa-circle-xmark {
+  margin: 1px;
+  position: absolute;
+  color: red;
+  visibility: hidden;
+}
+
 body form input:not([type=checkbox]):not([type=radio]) {
   position: relative;
-  width: 100%;
+  width: 425px;
   padding: .5em;
   border-radius: 5px;
   border: 1px solid transparent;

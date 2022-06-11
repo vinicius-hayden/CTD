@@ -95,11 +95,12 @@ function checkPassword() {
     return false;
   }
   password.style.setProperty('border', 'green 2px solid');
-  let label = document.getElementById('labelPass');
-  username.style.setProperty('border', 'green 2px solid');
-  let icon = document.createElement('i');
-  icon.classList.add('fa-solid', 'fa-circle-check');
-  label.appendChild(icon);
+  let failIconPass = document.getElementById('failPass');
+  let successIconPass = document.getElementById('successPass');
+  
+  successIconPass.style.visibility = 'visible';
+  failIconPass.style.visibility = 'hidden';
+
   if (errorElement.length != 0) {
     errorElement.innerText = '';
   }
@@ -112,6 +113,40 @@ function isChecked(checkbox) {
   } else {
     return false;
   }
+}
+
+function checkTel() { 
+  let errorElement = document.getElementById('errorTel');
+  let errorMessage = [];
+
+  if(telephone.value.trim() == "") { 
+    errorMessage.push('Please, fill in');
+    let failIconTel = document.getElementById('failTel');
+    let successIconTel = document.getElementById('successTel');
+    successIconTel.style.visibility = 'hidden';
+    failIconTel.style.visibility = 'visibile';
+    errorElement.classList.add("wrong");
+    errorElement.innerText = errorMessage;
+    return false;
+  } 
+  if (errorMessage.length > 0) {
+    errorElement.innerHTML = errorMessage.join("<br>");
+    errorElement.classList.add("wrong");
+    window.scrollTo(0, 0);
+    return false;
+  }
+
+  telephone.style.setProperty('border', 'green 2px solid');
+  let failIconTel = document.getElementById('failTel');
+  let successIconTel = document.getElementById('successTel');
+  
+  successIconTel.style.visibility = 'visible';
+  failIconTel.style.visibility = 'hidden';
+
+  if (errorElement.length != 0) {
+    errorElement.innerText = '';
+  }
+  return true;
 }
 
 function checkHobbies() {
@@ -166,34 +201,63 @@ function checkCountry() {
   let errorElement = document.getElementById("errorCountry");
   let errorMessage = [];
   let brazil = document.getElementById("brazil");
+  let options = document.getElementsByName('nationality');
+  let nationalities = Array.from(options) 
+  let checkedNationalities = nationalities.filter(item => item.checked);
+
+  if (checkedNationalities.length == 0) { 
+    errorMessage.push("This field is required");
+    errorElement.classList.add("wrong");
+    errorElement.innerText = errorMessage;
+    return false;
+  }
   if (brazil.checked) {
     errorMessage.push(
-      "Sorry, currently we are not recruting wizards from Brazil."
+      "Sorry, we are currently not recruting wizards from Brazil."
     );
     errorElement.classList.add("wrong");
     errorElement.innerText = errorMessage;
     return false;
-  } else {
-    return true;
+  } 
+
+  if (errorElement.length != 0) {
+    errorElement.innerText = '';
   }
+  return true;  
 }
 
 form.addEventListener("submit", (event) => {
   if (!checkUsername()) {
-    let failIcon = document.getElementById('failName');
-    let successIcon = document.getElementById('successName');
+    let failIconName = document.getElementById('failName');
+    let successIconName = document.getElementById('successName');
     username.style.setProperty('border', 'red 2px solid');
+    successIconName.style.visibility = 'hidden';
+    failIconName.style.visibility = 'visible';
+    event.preventDefault();
+  } 
+  else if (!checkPassword()) {
+    let failIcon = document.getElementById('failPass');
+    let successIcon = document.getElementById('successPass');
+    password.style.setProperty('border', 'red 2px solid');
     successIcon.style.visibility = 'hidden';
     failIcon.style.visibility = 'visible';
     event.preventDefault();
-  } else if (!checkPassword()) {
-    password.style.setProperty('border', 'red 2px solid');
+  } 
+  else if (!checkTel()) { 
+    let failIconTel = document.getElementById('failTel');
+    let successIconTel = document.getElementById('successTel');
+    telephone.style.setProperty('border', 'red 2px solid');
+    successIconTel.style.visibility = 'hidden';
+    failIconTel.style.visibility = 'visible';
     event.preventDefault();
-  } else if (!checkHobbies()) {
+  } 
+  else if (!checkHobbies()) {
     event.preventDefault();
-  } else if (!checkedHobby()) {
+  } 
+  else if (!checkedHobby()) {
     event.preventDefault();
-  } else if (!checkCountry()) {
+  } 
+  else if (!checkCountry()) {
     event.preventDefault();
   }
 });

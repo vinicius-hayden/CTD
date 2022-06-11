@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="https://kit.fontawesome.com/404f1f8d83.js" crossorigin="anonymous"></script>
     <title>Aula 13 - Mesa de trabalho</title>
 </head>
 
@@ -15,16 +16,35 @@
         <div id="errorName"></div>
         <label>
             Full name:
-            <input type="text" class="error" name="nome" id="name" autocomplete="off"/>
+            <div id="labelName">
+                <input type="text" class="error" name="nome" id="name" autocomplete="off"/>
+                <div id="nameIcons">
+                    <i class="fa-solid fa-circle-check" id="successName"></i>
+                    <i class="fa-solid fa-circle-xmark" id="failName"></i>
+                </div>
+            </div>
         </label>
         <div id="errorPass"></div>
         <label>
             Password:
-            <input type="password" name="pass" id="pass" />
+            <div id="labelPass">
+                <input type="password" name="pass" id="pass" />
+                <div id="passIcons">
+                    <i class="fa-solid fa-circle-check" id="successPass"></i>
+                    <i class="fa-solid fa-circle-xmark" id="failPass"></i>
+                </div>
+            </div>
         </label>
+        <div id="errorTel"></div>
         <label>
             Telephone Number:
-            <input type="text" name="tel" id="tel" />
+            <div id="labelTel">
+                <input type="text" name="tel" id="tel" />
+                <div id="telIcons">
+                    <i class="fa-solid fa-circle-check" id="successTel"></i>
+                    <i class="fa-solid fa-circle-xmark" id="failTel"></i>
+                </div>
+            </div>
         </label>
         <div id="errorHobbies"></div>
         <fieldset>
@@ -86,7 +106,7 @@
                 Writing
             </label>
         </fieldset>
-        <fieldset>
+        <fieldset required>
             <legend>Home country</legend>
             <label>
                 <input type="radio" name="nationality" id="nationalityArgentina" />

@@ -17,6 +17,7 @@ body {
   font-family: 'Poppins', sans-serif;
   display: flex;
   min-height: 100vh;
+  @include center();
   @include backgroundImage();
   .wrong {
     color: red;
@@ -25,18 +26,35 @@ body {
   }
   form {
     background-color: white;
-    width: 375px;
+    width: 425px;
     height: fit-content;
     padding: 2em;
-    margin: 4em 35vw;
-    border-radius: 10px;
+    // margin: 4em 35vw;
+    border-radius: 7px;
     box-shadow: 3px 3px 15px black;
     h1 {
       margin-bottom: .5em;
     }
+    #labelName, #labelPass, #labelTel {
+      display: flex;
+      #nameIcons, #passIcons, #telIcons {
+        .fa-circle-check {
+          margin: 1px;
+          position: absolute;
+          color: green;
+          visibility: hidden;
+        }
+        .fa-circle-xmark {
+          margin: 1px;
+          position: absolute;
+          color: red;
+          visibility: hidden;
+        }
+      }
+    }
     input:not([type=checkbox]):not([type=radio]) {
       position: relative;
-      width: 100%;
+      width: 425px;
       padding: .5em;
       border-radius: 5px;
       border: 1px solid transparent;
