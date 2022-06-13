@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  height: 100vh;
+  background-image: url('https://cdn2.picryl.com/photo/2016/06/14/cn-tower-toronto-canada-unsplash-5f03ec-1024.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formulario {
+  width: 28vw;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.311);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  box-shadow: 31px 36px 47px -3px rgba(0, 0, 0, 0.1),
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.formStyling {
+  width: 15vw;
+}
+
+.formItem {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  position: relative;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.formItem .fa-circle-check {
+  position: absolute;
+  top: 45px;
+  right: 20px;
+  color: green;
+  visibility: hidden;
+}
+
+.formItem .fa-circle-xmark {
+  position: absolute;
+  top: 45px;
+  right: 20px;
+  color: red;
+  visibility: hidden;
+}
+
+.formItem.sucess .fa-circle-check {
+  visibility: visible;
+}
+
+.formItem.sucess input {
+  border: green 2px solid;
+}
+
+.formItem.fail .fa-circle-xmark {
+  visibility: visible;
+}
+
+.formItem.fail input {
+  border: red 2px solid;
+}
+
+.error {
+  color: red;
+}
+
+.formulario input {
+  padding: 10px;
+}
+
+.formButton {
+  margin: 15px 0 15px 0;
+  padding: 15px;
+  border: 2px solid black;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.formItem .fa-eye {
+  position: absolute;
+  top: 45px;
+  left: 78%;
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.formItem .fa-eye-slash {
+  position: absolute;
+  top: 45px;
+  left: 78%;
+  cursor: pointer;
+}
+
+.confirmCadastro {
+  text-align: center;
+  background-color: rgb(149, 253, 45);
+  padding: 5px;
+  border-radius: 5px;
+  margin: 10px;
+  opacity: 0;
+  transition: all 1s linear;
+}

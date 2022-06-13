@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../src/style.css" />
+    <script
+      src="https://kit.fontawesome.com/404f1f8d83.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main>
+      <section>
+        <div class="formulario">
+          <form action="" method="GET" class="formStyling" id="form">
+            <div>
+              <div class="confirmCadastro" data-target="confirmCadastro"><h1>Cadastro concluído!</h1></div>
+            </div>
+            <div class="formItem">
+              <label for="nome">Name</label>
+              <input type="text" id="nome" name="nome" />
+              <i class="fa-solid fa-circle-check"></i>
+              <i class="fa-solid fa-circle-xmark"></i>
+              <div class="error"></div>
+            </div>
+
+            <div class="formItem">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" />
+              <i class="fa-solid fa-circle-check"></i>
+              <i class="fa-solid fa-circle-xmark"></i>
+              <div class="error"></div>
+            </div>
+
+            <div class="formItem">
+              <label for="senha">Password</label>
+              <input type="password" id="senha" name="senha" />
+              <i class="fa-solid fa-circle-check"></i>
+              <i class="fa-solid fa-circle-xmark"></i>
+              <div class="error"></div>
+              <i id="openEye" class="fa-solid fa-eye"></i>
+              <i id="slashedEye" class="fa-solid fa-eye-slash"></i>
+            </div>
+
+            <div class="formItem">
+              <label for="confirmSenha">Confirm Password</label>
+              <input type="password" id="confirmSenha" name="confirmSenha" />
+              <i class="fa-solid fa-circle-check"></i>
+              <i class="fa-solid fa-circle-xmark"></i>
+              <div class="error"></div>
+            </div>
+
+            <div class="formItem">
+              <button class="formButton" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="../src/signup.js"></script>
+  </body>
+</html>
