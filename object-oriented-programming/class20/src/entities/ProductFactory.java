@@ -15,15 +15,12 @@ public class ProductFactory {
     }
 
     public static Product createProduct(String description) {
-        if (description.equals("CAIXA10x10")) {
-            return new Box(10,10,10);
-        } else if (description.equals("FUTEBOL")) {
-            return new Ball(11);
-        } else if (description.equals("BOLATENIS")) {
-            return new Ball(0.32);
-        } else {
-            return null;
-        }
+        return switch (description) {
+            case "CAIXA10x10" -> new Box(10, 10, 10);
+            case "FUTEBOL" -> new Ball(11);
+            case "BOLATENIS" -> new Ball(0.32);
+            default -> null;
+        };
     }
 
 }
