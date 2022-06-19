@@ -1,0 +1,5 @@
+[≪abstract≫;Employee| #name: String; #gender: String; #jobPosition: String; #salary: double; #birthdate: Date; -clockInList: List| +clockIn();+clockInReport;+abstract bonusSalary():double;#validateInputs(); -calculateAge(): int]
+[Employee] ^ [Administrative| -department: String|+bonusSalary():double; #validateInputs()]
+[Employee] ^ [Faculty | -teachingForLevel: String|+bonusSalary():double; #validateInputs()] 1-teaches* [Subject]
+[Student]<is composed by..*-1++[Classroom| -gradeDescription:String|+add(subject: Subject);+add(student: Student); -validateInputs();]*++-*> [Subject| -name:String; -studyField: String; -validateInputs()]
+[Student|#name: String; #semesterGrades: list|+getAverageGrade():double ;+isApproved():boolean ;-validateInputs()]
