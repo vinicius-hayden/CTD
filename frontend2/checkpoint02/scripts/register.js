@@ -5,7 +5,7 @@ const sobrenome = document.getElementById("sobrenome");
 const email = document.getElementById("email");
 const senha = document.getElementById("password");
 const reSenha = document.getElementById("repassword");
-const form = document.getElementsByName("button");
+const button = document.getElementsByName("button");
 
 // VARIÁVEIS GLOBAIS //
 
@@ -16,8 +16,10 @@ var validPass = false;
 
 // REGISTER LOGIC //
 
+button.disabled = true;
+
 function isValidName(name) {
-  return /^[a-zA-Z]/.test(name);
+  return /^[\sa-zA-Z]+$/.test(name);
 }
 
 function isValidEmail(email) {
@@ -27,6 +29,8 @@ function isValidEmail(email) {
 function checkName() {
   let errorElement = document.getElementById("nameError");
   let errorMessage = [];
+
+  console.log(nome.value);
 
   if (nome.value.trim() === "" || nome.value == null) {
     errorMessage.push("This field is required");
@@ -76,7 +80,7 @@ function checkLastname() {
     return false;
   } else if (!isValidName(sobrenome.value)) {
     errorMessage.push(
-      "There should be at least one word, with one letter each and no numbers"
+      "There should be one word, with at least one letter and no numbers"
     );
     errorElement.innerText = errorMessage;
     sobrenome.style.setProperty("border", "red 2px solid");
@@ -157,53 +161,83 @@ function checkPassword() {
     if (errorElement.length != 0) {
       errorElement.innerText = "";
     }
-    validEmail = true;
     return true;
   }
 }
 
-function repeatPassword() { 
-  let errorElement = document.getElementById('');
-  if(reSenha.value != senha.value) { 
-    
+function checkRepeatPassword() { 
+  let errorElement = document.getElementById('rePasswordError');
+  let errorMessage = [];
+
+  if(reSenha.value !== senha.value) { 
+    errorMessage.push("The password doesn't match to the previous one");
+    errorElement.innerText = errorMessage;
+    reSenha.style.setProperty("border", "red 2px solid");
+    validPass = false;
+    return false
+  }
+  else { 
+    if (errorElement.length != 0) {
+      errorElement.innerText = "";
+    }
+    reSenha.style.setProperty("border", "green 2px solid");
+    return true;
   }
 }
 
-document.addEventListener("keydown", (event) => {
-  // VALIDAÇÃO DE DADOS
-  // caso dado seja válido, utilizar variável global setando para true.
-  if (checkName()) {
-    validName = true;
-  }
-  if (checkLastname()) {
-    validLastname = true;
-  }
-  if (checkEmail()) {
-    validEmail = true;
-  }
-  if (checkPassword()) {
-    validPass = true;
-  }
+// VALIDAÇÃO DE DADOS
+// caso dado seja válido, utilizar variável global setando para true.
+nome.addEventListener("keyup", (event) => {
+  validName = checkName();
+});
+
+sobrenome.addEventListener("keyup", (event) => {
+  validLastname = checkLastname();
+});
+
+email.addEventListener("keyup", (event) => {
+  validEmail = checkEmail();
+});
+
+senha.addEventListener("keyup", (event) => {
+  validPass = checkPassword() && checkRepeatPassword();
+});
+
+reSenha.addEventListener("keyup", (event) => {
+  validPass = checkPassword() && checkRepeatPassword();
 });
 
 // Implementar lógica:
 // if "variáveisGlobais" = true
 // onclick no button register = createUser()
 
-// const createUser = () => {
-//   fetch('https://ctd-todo-api.herokuapp.com/v1/users', {
-//     method: 'POST',
-//     headers: {
-//       Accept: '*/*, application/json',
-//       'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify({
-//       firstName: `${nome.value}`,
-//       lastName: `${sobrenome.value}`,
-//       email: `${email.value}`,
-//       password: `${senha.value}`
-//     })
-//   })
-//     .then(res => res.json())
-//     .then(res => console.log(res))
-// }
+function isAllFieldsValid() { 
+  return validName && validLastname && validPass && validEmail;
+}
+
+window.addEventListener("load", () => { 
+  if (isAllFieldsValid()) { 
+    button.disabled = false;
+    
+    button.addEventListener('click', () => {
+      createUser();
+      const createUser = () => {
+        fetch('https://ctd-todo-api.herokuapp.com/v1/users', {
+          method: 'POST',
+          headers: {
+            Accept: '*/*, application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            firstName: `${nome.value}`,
+            lastName: `${sobrenome.value}`,
+            email: `${email.value}`,
+            password: `${senha.value}`
+          })
+        })
+          .then(res => res.json())
+          .then(res => console.log(res))
+      }
+    })
+  }
+})
