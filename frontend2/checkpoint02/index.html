@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="styles/acesso.css">
 
   <!-- ---------------------- lógica aplicada no login ----------------------- -->
-  <script src="/scripts/utils.js"></script>
-  <script src="/scripts/index.js"></script>
+  <!-- <script src="/scripts/utils.js"></script>
+  <script src="/scripts/index.js"></script> -->
 
 </head>
 
@@ -22,12 +22,14 @@
   </div>
 
   <div class="right">
-    <form>
+    <form id="form">
       <div class="form-header">
         <p>To-Do App</p>
       </div>
       <h1>Acessar</h1>
       <label>
+        <div id="errorMessage">
+        </div>
         Email:
         <input id="inputEmail" type="text">
       </label>
@@ -43,7 +45,7 @@
       <a href="signup.html">Não possui conta? Crie agora mesmo</a>
     </div>
   </div>
-
+  <script src="./scripts/login.js"></script>
 </body>
 
 </html>
