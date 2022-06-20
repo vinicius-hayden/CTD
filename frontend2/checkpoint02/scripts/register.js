@@ -5,7 +5,7 @@ const sobrenome = document.getElementById("sobrenome");
 const email = document.getElementById("email");
 const senha = document.getElementById("password");
 const reSenha = document.getElementById("repassword");
-const button = document.getElementsByName("button");
+const button = document.querySelector("button");
 
 // VARIÁVEIS GLOBAIS //
 
@@ -16,7 +16,7 @@ var validPass = false;
 
 // REGISTER LOGIC //
 
-button.disabled = true;
+button.setAttribute('disabled', 'disabled');
 
 function isValidName(name) {
   return /^[\sa-zA-Z]+$/.test(name);
@@ -215,9 +215,11 @@ function isAllFieldsValid() {
   return validName && validLastname && validPass && validEmail;
 }
 
-window.addEventListener("load", () => { 
-  if (isAllFieldsValid()) { 
-    button.disabled = false;
+validateAllFields();
+
+function validateAllFields() { 
+  if (validName && validLastname && validPass && validEmail) { 
+    button.removeAttribute('disabled');
     
     button.addEventListener('click', () => {
       createUser();
@@ -240,4 +242,6 @@ window.addEventListener("load", () => {
       }
     })
   }
-})
+}
+
+
