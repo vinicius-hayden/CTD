@@ -16,21 +16,21 @@ var validPass = false;
 
 // REGISTER LOGIC //
 
-button.setAttribute('disabled', 'disabled');
+button.setAttribute("disabled", "disabled");
 
 function isValidName(name) {
   return /^[\sa-zA-Z]+$/.test(name);
 }
 
 function isValidEmail(email) {
-  return /\S+@\S+\.\S+/.test(email);
+  return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+    email
+  );
 }
 
 function checkName() {
   let errorElement = document.getElementById("nameError");
   let errorMessage = [];
-
-  console.log(nome.value);
 
   if (nome.value.trim() === "" || nome.value == null) {
     errorMessage.push("This field is required");
@@ -107,7 +107,7 @@ function checkEmail() {
     validEmail = false;
     return false;
   } else if (!isValidEmail(email.value)) {
-    errorMessage.push("Please, infor a valid email");
+    errorMessage.push("Please, inform a valid email");
     errorElement.innerText = errorMessage;
     email.style.setProperty("border", "red 2px solid");
     validEmail = false;
@@ -165,18 +165,17 @@ function checkPassword() {
   }
 }
 
-function checkRepeatPassword() { 
-  let errorElement = document.getElementById('rePasswordError');
+function checkRepeatPassword() {
+  let errorElement = document.getElementById("rePasswordError");
   let errorMessage = [];
 
-  if(reSenha.value !== senha.value) { 
+  if (reSenha.value !== senha.value) {
     errorMessage.push("The password doesn't match to the previous one");
     errorElement.innerText = errorMessage;
     reSenha.style.setProperty("border", "red 2px solid");
     validPass = false;
-    return false
-  }
-  else { 
+    return false;
+  } else {
     if (errorElement.length != 0) {
       errorElement.innerText = "";
     }
@@ -187,23 +186,23 @@ function checkRepeatPassword() {
 
 // VALIDAÇÃO DE DADOS
 // caso dado seja válido, utilizar variável global setando para true.
-nome.addEventListener("keyup", (event) => {
+nome.addEventListener("keyup", () => {
   validName = checkName();
 });
 
-sobrenome.addEventListener("keyup", (event) => {
+sobrenome.addEventListener("keyup", () => {
   validLastname = checkLastname();
 });
 
-email.addEventListener("keyup", (event) => {
+email.addEventListener("keyup", () => {
   validEmail = checkEmail();
 });
 
-senha.addEventListener("keyup", (event) => {
+senha.addEventListener("keyup", () => {
   validPass = checkPassword() && checkRepeatPassword();
 });
 
-reSenha.addEventListener("keyup", (event) => {
+reSenha.addEventListener("keyup", () => {
   validPass = checkPassword() && checkRepeatPassword();
 });
 
@@ -211,37 +210,49 @@ reSenha.addEventListener("keyup", (event) => {
 // if "variáveisGlobais" = true
 // onclick no button register = createUser()
 
-function isAllFieldsValid() { 
+function isAllFieldsValid() {
   return validName && validLastname && validPass && validEmail;
 }
 
-validateAllFields();
+setInterval("validateAllFields()", 50);
 
-function validateAllFields() { 
-  if (validName && validLastname && validPass && validEmail) { 
-    button.removeAttribute('disabled');
-    
-    button.addEventListener('click', () => {
-      createUser();
-      const createUser = () => {
-        fetch('https://ctd-todo-api.herokuapp.com/v1/users', {
-          method: 'POST',
-          headers: {
-            Accept: '*/*, application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            firstName: `${nome.value}`,
-            lastName: `${sobrenome.value}`,
-            email: `${email.value}`,
-            password: `${senha.value}`
-          })
-        })
-          .then(res => res.json())
-          .then(res => console.log(res))
+function createUser() {
+  fetch("https://ctd-todo-api.herokuapp.com/v1/users", {
+    method: "POST",
+    headers: {
+      Accept: "*/*, application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      firstName: `${nome.value}`,
+      lastName: `${sobrenome.value}`,
+      email: `${email.value}`,
+      password: `${senha.value}`,
+    }),
+  })
+    .then((res) => {
+      console.log(res);
+      if (!res.ok) {
+        throw Error(res.statusText);
+      } else {
+        res.json().then(() => {
+          alert("Conta criada com êxito!");
+        });
       }
     })
-  }
+    .catch((data) => {
+      if (data == "Error: Bad Request") {
+        alert("Usuário já existe!");
+      }
+    });
 }
 
+function validateAllFields() {
+  if (isAllFieldsValid()) {
+    button.removeAttribute("disabled");
 
+    button.addEventListener("click", () => {
+      createUser();
+    });
+  }
+}
