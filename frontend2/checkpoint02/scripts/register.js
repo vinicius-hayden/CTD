@@ -6,6 +6,7 @@ const email = document.getElementById("email");
 const senha = document.getElementById("password");
 const reSenha = document.getElementById("repassword");
 const button = document.querySelector("button");
+const errorRegister = document.getElementById('error-register');
 
 // VARIÁVEIS GLOBAIS //
 
@@ -186,6 +187,27 @@ function checkRepeatPassword() {
 
 // VALIDAÇÃO DE DADOS
 // caso dado seja válido, utilizar variável global setando para true.
+
+document.addEventListener("keyup", () => {
+  function isAllFieldsValid() {
+    return validName && validLastname && validPass && validEmail;
+  }
+
+  isAllFieldsValid();
+
+  if (validName && validLastname && validPass && validEmail) {
+    button.removeAttribute("disabled");
+
+    button.addEventListener("click", () => {
+      createUser();
+    });
+  }
+});
+
+function isAllFieldsValid() {
+  return validName && validLastname && validPass && validEmail;
+}
+
 nome.addEventListener("keyup", () => {
   validName = checkName();
 });
@@ -210,11 +232,7 @@ reSenha.addEventListener("keyup", () => {
 // if "variáveisGlobais" = true
 // onclick no button register = createUser()
 
-function isAllFieldsValid() {
-  return validName && validLastname && validPass && validEmail;
-}
-
-setInterval("validateAllFields()", 50);
+// setInterval("validateAllFields()", 50);
 
 function createUser() {
   fetch("https://ctd-todo-api.herokuapp.com/v1/users", {
@@ -235,24 +253,37 @@ function createUser() {
       if (!res.ok) {
         throw Error(res.statusText);
       } else {
-        res.json().then(() => {
-          alert("Conta criada com êxito!");
+        res.json().then((data) => {
+          localStorage.setItem("jwt", data.jwt);
+          errorRegister.innerText = 'Conta criada com sucesso!';
         });
       }
     })
     .catch((data) => {
       if (data == "Error: Bad Request") {
-        alert("Usuário já existe!");
+        senha.style.setProperty('border', 'red 2px solid')
+        nome.style.setProperty('border', 'red 2px solid')
+        email.style.setProperty('border', 'red 2px solid')
+        sobrenome.style.setProperty('border', 'red 2px solid')
+        reSenha.style.setProperty('border', 'red 2px solid')
+        errorRegister.innerText = 'Usuário já existe!';
       }
     });
-}
 
-function validateAllFields() {
-  if (isAllFieldsValid()) {
-    button.removeAttribute("disabled");
-
-    button.addEventListener("click", () => {
-      createUser();
-    });
-  }
+  // .then((res) => {
+  //   console.log(res.json()).then(console.log());
+  //   if (!res.ok) {
+  //     throw Error(res.statusText);
+  //   } else {
+  //     console.log(res);
+  //     res.json().then(() => {
+  //       alert("Conta criada com êxito!");
+  //     });
+  //   }
+  // })
+  // .catch((data) => {
+  //   if (data == "Error: Bad Request") {
+  //     alert("Usuário já existe!");
+  //   }
+  // });
 }
