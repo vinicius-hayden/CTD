@@ -24,7 +24,14 @@ loginForm.addEventListener("submit", (event) => {
       res.json() 
       console.log(res)
       errorMessage.innerText = 'Login efetuado com sucesso!'
-      window.setInterval(window.location.href = '/tarefas.html', 60000)
+      email.style.setProperty('border', 'green 2px solid');
+      senha.style.setProperty('border', 'green 2px solid'); 
+      
+      function href() { 
+        window.location.href = '/tarefas.html'
+      }
+
+      setTimeout(href, 100000)
     }
   })
   .catch(() => {
