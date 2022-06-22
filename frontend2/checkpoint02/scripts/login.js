@@ -17,6 +17,15 @@ loginForm.addEventListener("submit", (event) => {
     }),
   })
   .then((res) => {
+    console.log(res);
+
+    if (res.statusText == "Bad Request") { 
+      errorMessage.innerText = `Usuário com dados incorretos`
+    }
+    else if (res.statusText == "Not Found") { 
+      errorMessage.innerText = `Usuário ou senha incorretos`
+    }
+
     if (!res.ok) { 
       throw Error(res.statusText);
     }
@@ -31,13 +40,13 @@ loginForm.addEventListener("submit", (event) => {
         window.location.href = '/tarefas.html'
       }
 
-      setTimeout(href, 100000)
+      setTimeout(href, 1000)
     }
   })
-  .catch(() => {
-    errorMessage.innerText = `Usuário não encontrado`
+  .catch((err) => {
+    console.log(err);
     email.style.setProperty('border', 'red 2px solid');
-    senha.style.setProperty('border', 'red 2px solid');    
+    senha.style.setProperty('border', 'red 2px solid');
   })
 })
 
