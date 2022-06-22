@@ -188,20 +188,20 @@ function checkRepeatPassword() {
 // VALIDAÇÃO DE DADOS
 // caso dado seja válido, utilizar variável global setando para true.
 
+function isAllFieldsValid() {
+  return validName && validLastname && validPass && validEmail;
+}
+
 document.addEventListener("keyup", () => {
-  function isAllFieldsValid() {
-    return validName && validLastname && validPass && validEmail;
-  }
-
-  isAllFieldsValid();
-
-  if (validName && validLastname && validPass && validEmail) {
+  if (isAllFieldsValid()) {
     button.removeAttribute("disabled");
-
-    button.addEventListener("click", () => {
-      createUser();
-    });
+  } else { 
+    button.setAttribute("disabled", "disabled");
   }
+});
+
+button.addEventListener("click", () => {
+  createUser();
 });
 
 function isAllFieldsValid() {
@@ -250,24 +250,28 @@ function createUser() {
   })
     .then((res) => {
       console.log(res);
+
+      if (res.statusText == "Bad Request") { 
+        errorMessage.innerText = `Usuário com dados incorretos`
+      }
+  
       if (!res.ok) {
         throw Error(res.statusText);
       } else {
         res.json().then((data) => {
-          localStorage.setItem("jwt", data.jwt);
-          errorRegister.innerText = 'Conta criada com sucesso!';
+          localStorage.setItem("jwt", JSON.stringify(data.jwt));
+          console.log(localStorage);
+          errorRegister.innerText = 'Conta criada com sucesso! ✔️';
         });
       }
     })
-    .catch((data) => {
-      if (data == "Error: Bad Request") {
-        senha.style.setProperty('border', 'red 2px solid')
-        nome.style.setProperty('border', 'red 2px solid')
-        email.style.setProperty('border', 'red 2px solid')
-        sobrenome.style.setProperty('border', 'red 2px solid')
-        reSenha.style.setProperty('border', 'red 2px solid')
-        errorRegister.innerText = 'Usuário já existe!';
-      }
+    .catch((err) => {
+      senha.style.setProperty('border', 'red 2px solid')
+      nome.style.setProperty('border', 'red 2px solid')
+      email.style.setProperty('border', 'red 2px solid')
+      sobrenome.style.setProperty('border', 'red 2px solid')
+      reSenha.style.setProperty('border', 'red 2px solid')
+      errorRegister.innerText = 'Usuário já existe!';
     });
 
   // .then((res) => {
