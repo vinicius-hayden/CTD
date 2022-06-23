@@ -96,15 +96,15 @@ loginForm.addEventListener("submit", (event) => {
   })
   .then((res) => {
     console.log(res);
-    var resposta = JSON.stringify(res.statusText);
+    var resposta = res.statusText;
     console.log(resposta)
     console.log("Not Found")
     console.log(resposta === `Not Found`);
     
-    if (resposta === `"Not Found"`) { 
-      errorMessage.innerText = `Usuário não encontrados`
+    if (resposta === "Not Found") { 
+      errorMessage.innerText = `Usuário não encontrado`
     }
-    else if (resposta === `"Bad Request"`) { 
+    else if (resposta === "Bad Request") { 
       errorMessage.innerText = `Usuário ou senha incorretos`
     }
 
