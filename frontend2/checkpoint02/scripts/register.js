@@ -232,8 +232,6 @@ reSenha.addEventListener("keyup", () => {
 // if "variáveisGlobais" = true
 // onclick no button register = createUser()
 
-// setInterval("validateAllFields()", 50);
-
 function createUser() {
   fetch("https://ctd-todo-api.herokuapp.com/v1/users", {
     method: "POST",
@@ -278,21 +276,4 @@ function createUser() {
       reSenha.style.setProperty('border', 'red 2px solid')
       errorRegister.innerText = 'Usuário já existe!';
     });
-
-  // .then((res) => {
-  //   console.log(res.json()).then(console.log());
-  //   if (!res.ok) {
-  //     throw Error(res.statusText);
-  //   } else {
-  //     console.log(res);
-  //     res.json().then(() => {
-  //       alert("Conta criada com êxito!");
-  //     });
-  //   }
-  // })
-  // .catch((data) => {
-  //   if (data == "Error: Bad Request") {
-  //     alert("Usuário já existe!");
-  //   }
-  // });
 }
