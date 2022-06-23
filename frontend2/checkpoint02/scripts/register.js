@@ -262,6 +262,11 @@ function createUser() {
           localStorage.setItem("jwt", JSON.stringify(data.jwt));
           console.log(localStorage);
           errorRegister.innerText = 'Conta criada com sucesso! ✔️';
+          function href() { 
+            window.location.href = '/index.html'
+          }
+    
+          setTimeout(href, 1000)
         });
       }
     })
