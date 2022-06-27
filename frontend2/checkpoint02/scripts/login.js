@@ -95,12 +95,8 @@ loginForm.addEventListener("submit", (event) => {
     }),
   })
   .then((res) => {
-    console.log(res);
     var resposta = res.statusText;
-    console.log(resposta)
-    console.log("Not Found")
-    console.log(resposta === `Not Found`);
-    
+      
     if (resposta === "Not Found") { 
       errorMessage.innerText = `Usuário não encontrado`
     }
@@ -112,8 +108,9 @@ loginForm.addEventListener("submit", (event) => {
       throw Error(res);
     }
     else { 
-      res.json() 
-      console.log(res)
+      res.json().then(data => {
+        localStorage.setItem('jwt', JSON.stringify(data.jwt))
+      })
       errorMessage.innerText = 'Login efetuado com sucesso!'
       email.style.setProperty('border', 'green 2px solid');
       senha.style.setProperty('border', 'green 2px solid'); 
