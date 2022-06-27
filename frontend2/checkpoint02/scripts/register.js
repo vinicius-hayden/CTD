@@ -261,7 +261,7 @@ function createUser() {
           console.log(localStorage);
           errorRegister.innerText = 'Conta criada com sucesso! ✔️';
           function href() { 
-            window.location.href = '/index.html'
+            window.location.href = '/tarefas.html'
           }
     
           setTimeout(href, 1000)
