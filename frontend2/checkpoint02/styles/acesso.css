@@ -90,6 +90,14 @@ button {
   justify-content: center;
 }
 
+.lnr-eye {
+  position: absolute;
+  right: 29px;
+  margin-top: -25px;
+  cursor: pointer;
+  font-size: 20.5px;
+}
+
 .wrong { 
   color: red;
   font-size: 15px;
