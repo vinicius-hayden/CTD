@@ -3,6 +3,7 @@ const senha = document.getElementById("inputPassword");
 const loginForm = document.getElementById("form");
 const errorMessage = document.getElementById("errorMessage");
 const button = document.getElementById('submit');
+const btn = document.querySelector('.lnr-eye')
 
 var validEmail = false;
 var validPass = false;
@@ -126,4 +127,14 @@ loginForm.addEventListener("submit", (event) => {
     email.style.setProperty('border', 'red 2px solid');
     senha.style.setProperty('border', 'red 2px solid');
   })
+})
+
+btn.addEventListener('click', function () {
+  let input = document.querySelector('#inputPassword')
+
+  if (input.getAttribute('type') == 'password') {
+    input.setAttribute('type', 'text')
+  } else {
+    input.setAttribute('type', 'password')
+  }
 })
