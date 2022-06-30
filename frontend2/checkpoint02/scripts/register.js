@@ -259,12 +259,17 @@ function createUser() {
         res.json().then((data) => {
           localStorage.setItem("jwt", JSON.stringify(data.jwt));
           console.log(localStorage);
-          errorRegister.innerText = 'Conta criada com sucesso! ✔️';
+          Swal.fire({
+            icon: 'success',
+            title: 'Account created',
+            showConfirmButton: false,
+            timer: 1500
+          })
           function href() { 
             window.location.href = '/tarefas.html'
           }
     
-          setTimeout(href, 1000)
+          setTimeout(href, 1500)
         });
       }
     })
@@ -274,6 +279,17 @@ function createUser() {
       email.style.setProperty('border', 'red 2px solid')
       sobrenome.style.setProperty('border', 'red 2px solid')
       reSenha.style.setProperty('border', 'red 2px solid')
-      errorRegister.innerText = 'Usuário já existe!';
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'This user is already registered'
+        // footer: `${err.status + ':' + err.statusText}`
+      }).then(() => {
+        nome.value = ''
+        sobrenome.value = ''
+        email.value = ''
+        password.value = ''
+        repassword.value = ''
+      })
     });
 }
