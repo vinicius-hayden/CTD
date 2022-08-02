@@ -36,4 +36,5 @@ public class SquareTest {
         System.out.println(s9.evaluatePerimeter());
         System.out.println(s10.evaluatePerimeter());
     }
+
 }

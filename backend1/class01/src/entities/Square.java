@@ -1,6 +1,6 @@
 package entities;
 
-public class Square extends Figure {
+public class Square extends Figure{
 
     public double side;
 
@@ -16,4 +16,5 @@ public class Square extends Figure {
     public double evaluatePerimeter() {
         return 4 * getSide();
     }
+
 }

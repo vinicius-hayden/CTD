@@ -1,6 +1,6 @@
 package entities;
 
-public class Circle extends Figure {
+public class Circle extends Figure{
 
     public double ray;
 
@@ -16,4 +16,5 @@ public class Circle extends Figure {
     public double evaluatePerimeter() {
         return (2 * Math.PI) * getRay();
     }
+
 }
