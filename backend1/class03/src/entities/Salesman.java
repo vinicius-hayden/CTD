@@ -27,7 +27,7 @@ public abstract class Salesman {
             salesmanCategory = "Master";
         }
 
-        System.out.println("Total points: " + " " + evaluatePoints() + " " + "   Salesman Category: " + salesmanCategory);
+        System.out.println("Total points: " + " space " + evaluatePoints() + " " + "   Salesman Category: " + salesmanCategory);
     }
 
 }
