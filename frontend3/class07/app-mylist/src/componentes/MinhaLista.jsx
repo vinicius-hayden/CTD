@@ -18,25 +18,26 @@ export default function MinhaLista({ titulo, produtos }) {
         <ul>
           {
             produtos.map((produto, indice) => {
-              if (indice <= 4) { 
-                <li> Indice:{indice} - {produto.nome} </li>
+              const limiteItens = indice < 5;
+              if (limiteItens) {
+                return <Produto produto={produto}/>
+                // <li> Indice:{indice} - {produto.nome} </li>
               }
             })
           }
-          < Produto />
         </ul>
       </section>
       <section>
         <h2>Três produtos de maior preço</h2>
         <ul>
           {
-            produtos.filter((produto, indice) => {
-              if (produto.idade > 10) { 
-                <li> Indice:{indice} - {produto.nome} - {produto.idade} </li>
+            produtos.filter((produto) => {
+              if (produto.preco > 10) { 
+                // <li> Indice:{indice} - {produto.nome} - {produto.idade} </li>
+                return <Produto produto={produto}/>
               } 
             })
           }
-          <Produto />
         </ul>
       </section>
       <section>
@@ -47,10 +48,10 @@ export default function MinhaLista({ titulo, produtos }) {
             
             if(produto.id == 4) { 
               <li> Indice:{indice} - {produto.nome} </li>
+              return <Produto produto={produto} />
             }
            })
           }
-          <Produto />
         </ul>
       </section>
     </article>
