@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { useRef, useEffect } from "react";
 import Sidebar from "./components/Sidebar";
 
 export default function App() {
+
+  const ref = useRef(null);
 
   let [sidebarState, toggleSideBarState] = useState(false);
   
@@ -11,15 +14,30 @@ export default function App() {
     return sidebarState;
   }
 
+  useEffect( function () {
+    const handleClick = event => {
+      console.log("Button clicked!");
+    }
+  
+    const element = ref.current;
+  
+    element.addEventListener('keydown', handleClick);
+  
+    return () => {
+      element.removeEventListener('keydown', handleClick);
+    };
+
+  }, []);
+
   return (
     <>
       <div className="l-app">
         
-        <button className="l-sidebar__btn" type="button" onClick={changeClass}>
+        {/* <button className="l-sidebar__btn" type="button" onClick={changeClass}>
           Menu
-        </button>
+        </button> */}
        
-        <button type="button" onClick={changeClass}>...</button>
+        <button type="button" onClick={changeClass} ref={ref}>Menu</button>
 
        <Sidebar classState={sidebarState}></Sidebar>
         
