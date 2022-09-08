@@ -1,6 +1,25 @@
 import { useState } from "react";
 import { useRef, useEffect } from "react";
 import Sidebar from "./components/Sidebar";
+import Forms from "./components/Forms";
+
+const ESCAPE_KEYS = ["27", "Escape", " "];
+
+const useEventListener = (eventName, handler, element = window) => {
+  const savedHandler = useRef();
+
+  useEffect(() => {
+    savedHandler.current = handler;
+  }, [handler]);
+
+  useEffect(() => {
+    const eventListener = (event) => savedHandler.current(event);
+    element.addEventListener(eventName, eventListener);
+    return () => {
+      element.removeEventListener(eventName, eventListener);
+    };
+  }, [eventName, element]);
+};
 
 export default function App() {
   const ref = useRef(null);
@@ -9,24 +28,21 @@ export default function App() {
 
   function changeClass() {
     toggleSideBarState(!sidebarState);
-    console.log(sidebarState);
     return sidebarState;
   }
 
-  useEffect(function () {
-    const handleClick = (event) => {
-      event.preventDefault();
-      console.log("Button clicked!");
-    };
+  const keydownHandler = ({ key }) => {
+    if (ESCAPE_KEYS.includes(String(key))) {
+      changeClass();
+    }
+  };
 
-    const element = ref.current;
+  const doubleClickHandler = (event) => {
+    changeClass();
+  };
 
-    element.addEventListener("keydown", handleClick);
-
-    return () => {
-      element.removeEventListener("keydown", handleClick);
-    };
-  }, []);
+  useEventListener("keydown", keydownHandler);
+  useEventListener("dblclick", doubleClickHandler);
 
   return (
     <>
@@ -34,42 +50,24 @@ export default function App() {
         <button className="l-sidebar__btn" type="button" onClick={changeClass}>
           Menu
         </button>
-        <Sidebar classState={sidebarState}></Sidebar>
         
-        {/* <!--
-        2. O usuário poderá usar o teclado para abrir ou fechar
-        a sidebar. No caso, as tecla Space.
-
-        3. O usuário poderá usar o mouse para abrir ou fechar
-        a sidebar. No caso, um duplo click em qualquer local
-        do site irá abrir ou fechar a sidebar.
-
-        --> */}
+        <Sidebar classState={sidebarState} changeClass={changeClass}></Sidebar>
+        
         <div className="l-content">
-          {/* <!-- Sessão Principal --> */}
           <div className="l-page bg__profile">
             <main>
               <h1 className="title">Olá, me chamo Vinícius Hayden</h1>
               <p className="description">
                 Seja bem vindo ao meu currículo on-line.
               </p>
-
               <nav className="c-nav u-my-3">
-                <a className="c-nav__item" href="">
-                  Github
-                </a>
-                <a className="c-nav__item" href="">
-                  Linkedin
-                </a>
+                <a className="c-nav__item" href="">Github</a>
+                <a className="c-nav__item" href="">Linkedin</a>
               </nav>
-
-              <a className="c-btn u-my-3" href="#sobre-mim">
-                sobre mim
-              </a>
+              <a className="c-btn u-my-3" href="#sobre-mim">sobre mim</a>
             </main>
           </div>
 
-          {/* <!-- Sessão Sobre mim --> */}
           <div className="l-page" id="sobre-mim">
             <article>
               <h1 className="title">Sobre mim</h1>
@@ -95,83 +93,7 @@ export default function App() {
               </p>
             </article>
           </div>
-
-          {/* <!-- Sessão Contatos--> */}
-          <div className="l-page" id="contatos">
-            <section>
-              <h1 className="title">Posso te ajudar?</h1>
-
-              <nav className="c-nav">
-                <a className="c-nav__item" href="">
-                  Github
-                </a>
-                <a className="c-nav__item" href="">
-                  Linkedin
-                </a>
-                <a className="c-nav__item" href="tel:+5521972190000">
-                  Telefone
-                </a>
-              </nav>
-
-              <form name="contact" className="c-form">
-                <div className="c-form__group">
-                  <label htmlFor="name" className="c-form__label">
-                    Nome
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Digite seu nome"
-                    id="name"
-                    className="c-form__control"
-                  />
-                </div>
-                <div className="c-form__group">
-                  <label htmlFor="email" className="c-form__label">
-                    E-mail
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Digite seu e-mail"
-                    id="email"
-                    className="c-form__control"
-                  />
-                </div>
-                <div className="c-form__group">
-                  <label htmlFor="subject" className="c-form__label">
-                    Assunto
-                  </label>
-                  <select id="subject" className="c-form__control">
-                    <option selected disabled>
-                      Qual o assunto?
-                    </option>
-                    <option defaultValue="orcamento">Orçamento</option>
-                    <option defaultValue="oportunidade">Oportunidade</option>
-                    <option defaultValue="parceria">Parcerias</option>
-                  </select>
-                </div>
-                <div className="c-form__group">
-                  <label htmlFor="messager" className="c-form__label">
-                    Mensagem
-                  </label>
-                  <textarea
-                    rows="5"
-                    placeholder="Se desejar, explique-me melhor..."
-                    id="messager"
-                    className="c-form__control"
-                  ></textarea>
-                </div>
-                <div className="c-form__group">
-                  <button className="c-btn" type="submit">
-                    Enviar
-                  </button>
-                </div>
-              </form>
-            </section>
-
-            <footer className="u-my-3">
-              <span>Todos os direitos reservados Vinicius Hayden.</span>
-            </footer>
-          </div>
+          <Forms/>
         </div>
       </div>
     </>
