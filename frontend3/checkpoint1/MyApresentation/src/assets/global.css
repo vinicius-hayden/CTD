@@ -33,7 +33,7 @@ body {
   min-width: 250px;
   top: 0;
   left: 0;
-  transform: translateX(-250px);
+  /* transform: translateX(-250px); */
   width: 250px;
   z-index: 1;
 }
@@ -55,9 +55,15 @@ body {
   font-size: 1.5rem;
   position: fixed;
   margin: 50px;
+  cursor: pointer;
+}
+
+.l-sidebar__btn:hover {
+  background-color: darkblue;
 }
 
 .l-sidebar--open {
+  background-color: aqua;
   transition: all 0.5s;
   transform: translateX(0);
 }
@@ -85,7 +91,7 @@ body {
 .bg__profile {
   background-image: url("https://avatars.githubusercontent.com/u/67245806?v=4");
   background-repeat: no-repeat;
-  background-position: top right;
+  background-position: right;
 }
 
 /*
