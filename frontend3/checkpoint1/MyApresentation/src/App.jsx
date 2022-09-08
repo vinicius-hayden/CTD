@@ -3,46 +3,40 @@ import { useRef, useEffect } from "react";
 import Sidebar from "./components/Sidebar";
 
 export default function App() {
-
   const ref = useRef(null);
 
   let [sidebarState, toggleSideBarState] = useState(false);
-  
+
   function changeClass() {
     toggleSideBarState(!sidebarState);
-    console.log(sidebarState); 
+    console.log(sidebarState);
     return sidebarState;
   }
 
-  useEffect( function () {
-    const handleClick = event => {
+  useEffect(function () {
+    const handleClick = (event) => {
+      event.preventDefault();
       console.log("Button clicked!");
-    }
-  
-    const element = ref.current;
-  
-    element.addEventListener('keydown', handleClick);
-  
-    return () => {
-      element.removeEventListener('keydown', handleClick);
     };
 
+    const element = ref.current;
+
+    element.addEventListener("keydown", handleClick);
+
+    return () => {
+      element.removeEventListener("keydown", handleClick);
+    };
   }, []);
 
   return (
     <>
-      <div className="l-app">
-        
-        {/* <button className="l-sidebar__btn" type="button" onClick={changeClass}>
+      <div className="l-app" ref={ref}>
+        <button className="l-sidebar__btn" type="button" onClick={changeClass}>
           Menu
-        </button> */}
-       
-        <button type="button" onClick={changeClass} ref={ref}>Menu</button>
-
-       <Sidebar classState={sidebarState}></Sidebar>
+        </button>
+        <Sidebar classState={sidebarState}></Sidebar>
         
         {/* <!--
-
         2. O usuário poderá usar o teclado para abrir ou fechar
         a sidebar. No caso, as tecla Space.
 
@@ -175,7 +169,7 @@ export default function App() {
             </section>
 
             <footer className="u-my-3">
-              <span>Todos os direitos reservados fulano.</span>
+              <span>Todos os direitos reservados Vinicius Hayden.</span>
             </footer>
           </div>
         </div>
