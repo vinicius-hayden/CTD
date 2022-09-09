@@ -1,26 +1,21 @@
-export default function Sidebar({ classState }) {
+export default function Sidebar({ classState, changeClass }) {
   let currentState = null;
   if (classState) {
-    currentState = "l-sidebar--open"; // l-sidebar--open
+    currentState = "l-sidebar l-sidebar--open";
   } else {
-    currentState = "l-sidebar--close"; //l-sidebar--close
-  }
-
-  function closeSidebar() {
-    let sidebar = document.querySelector('.l-sidebar--open')
-    sidebar.remove();
+    currentState = "l-sidebar l-sidebar--close";
   }
 
   return (
-    <div className={currentState}>
-      <div className="l-sidebar">
+    <div className={currentState} id="mainDiv">
+      <div>
         <h1 className="l-logo">Vinicius Hayden</h1>
         <nav className="c-sidebar">
-          <a className="c-nav__item" href="#sobre-mim" onClick={closeSidebar}>
-            sobre mim
+          <a className="c-nav__item" href="#sobre-mim" onClick={changeClass}>
+            About me
           </a>
-          <a className="c-nav__item" href="#contatos" onClick={closeSidebar}>
-            contatos
+          <a className="c-nav__item" href="#contatos" onClick={changeClass}>
+            Contacts
           </a>
         </nav>
       </div>
