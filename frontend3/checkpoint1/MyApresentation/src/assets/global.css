@@ -1,3 +1,5 @@
+@import '@sweetalert2/theme-dark/dark.css';
+
 * {
   box-sizing: border-box;
 }
@@ -8,6 +10,7 @@ html {
 
 body {
   background-color: rgb(22, 22, 22);
+  background-attachment: fixed;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   color: white;
@@ -39,9 +42,10 @@ body {
 }
 
 .l-sidebar::after {
+  cursor: pointer;
   background-color: transparent;
   color: white;
-  content: "fechar";
+  content: "x";
   font-family: Arial Black, Arial, sans-serif;
   position: absolute;
   top: 10px;
@@ -49,8 +53,9 @@ body {
 }
 
 .l-sidebar__btn {
-  background-color: blue;
+  background-color: transparent;
   border: none;
+  border-radius: 50%;
   color: white;
   font-size: 1.5rem;
   position: fixed;
@@ -59,11 +64,11 @@ body {
 }
 
 .l-sidebar__btn:hover {
-  background-color: darkblue;
+  color: gray;
 }
 
 .l-sidebar--open {
-  background-color: aqua;
+  background-color: black;
   transition: all 0.5s;
   transform: translateX(0);
 }
@@ -74,7 +79,7 @@ body {
 }
 
 .l-logo {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   color: white;
   margin-bottom: 75px;
 }
@@ -84,12 +89,13 @@ body {
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  padding: 50px;
+  padding: 265px;
   width: 100%;
+  user-select: none;
 }
 
 .bg__profile {
-  background-image: url("https://avatars.githubusercontent.com/u/67245806?v=4");
+  background-image: url("../assets/images/profile.png");
   background-repeat: no-repeat;
   background-position: right;
 }
@@ -112,7 +118,7 @@ body {
 }
 
 .c-nav__item {
-  font-size: 24px;
+  font-size: 22px;
   color: white;
   text-decoration: none;
 }
@@ -120,13 +126,19 @@ body {
 .c-btn {
   background-color: gray;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   color: white;
   font-family: Arial Black, Arial, sans-serif;
-  font-size: 24px;
+  font-size: 18px;
+  font-weight: lighter;
   padding: 5px 10px;
   text-decoration: none;
 }
+
+.c-btn:hover {
+  background-color: rgba(101, 93, 93, 0.501);
+}
+
 
 .c-form {
   padding: 50px 0;
@@ -197,4 +209,15 @@ body {
 .u-my-3 {
   margin-top: 25px;
   margin-bottom: 25px;
+}
+
+.error-msg {
+  font-size: 15px;
+  width: 100%;
+  color: red;
+  font-weight: bold;
+}
+
+FaLinkedin {
+  size: 50px;
 }
