@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useRef, useEffect } from "react";
 import Sidebar from "./components/Sidebar";
 import Forms from "./components/Forms";
+import { FaLinkedin, FaCanadianMapleLeaf, FaGithub, FaGripLines } from 'react-icons/fa';
 
 const ESCAPE_KEYS = ["27", "Escape", " "];
 
@@ -23,6 +24,7 @@ const useEventListener = (eventName, handler, element = window) => {
 
 export default function App() {
   const ref = useRef(null);
+  const style = {fontSize: "2.0em"}
 
   let [sidebarState, toggleSideBarState] = useState(false);
 
@@ -48,7 +50,7 @@ export default function App() {
     <>
       <div className="l-app" ref={ref}>
         <button className="l-sidebar__btn" type="button" onClick={changeClass}>
-          Menu
+        <FaGripLines style={{fontSize: "1.8em"}}/>
         </button>
         
         <Sidebar classState={sidebarState} changeClass={changeClass}></Sidebar>
@@ -56,40 +58,37 @@ export default function App() {
         <div className="l-content">
           <div className="l-page bg__profile">
             <main>
-              <h1 className="title">Olá, me chamo Vinícius Hayden</h1>
+              <h1 className="title">Hi, I'm Vinicius Hayden <FaCanadianMapleLeaf/></h1>
               <p className="description">
-                Seja bem vindo ao meu currículo on-line.
+                Software Engineer
               </p>
               <nav className="c-nav u-my-3">
-                <a className="c-nav__item" href="">Github</a>
-                <a className="c-nav__item" href="">Linkedin</a>
+                <a className="c-nav__item" href="https://github.com/vinicius-hayden" target='_blank'><FaGithub style={style}/></a>
+                <a className="c-nav__item" href="https://www.linkedin.com/in/vinicius-hayden/"target='_blank'><FaLinkedin style={style}/></a>
               </nav>
-              <a className="c-btn u-my-3" href="#sobre-mim">sobre mim</a>
+              <a className="c-btn u-my-3" href="#sobre-mim">About me</a>
             </main>
           </div>
 
           <div className="l-page" id="sobre-mim">
             <article>
-              <h1 className="title">Sobre mim</h1>
+              <h1 className="title">About me</h1>
               <p>
-                Mussum Ipsum, cacilds vidis litro abertis. Paisis, filhis,
-                espiritis santis.Per aumento de cachacis, eu
-                reclamis.Casamentiss faiz malandris se pirulitá.Copo furadis é
-                disculpa de bebadis, arcu quam euismod magna.
+                Currently studying at Digital House Brasil in the Certified Tech Developer 
+                course developed by Mercado Livre and Globant. Experience in Ruby with Ruby
+                on Rails, and JavaScript with Node, as well as Web Development in HTML5 and 
+                CSS with Tailwind and Bootstrap frameworks, mostly acquiring these languages
+                and frameworks through auto-didacticism.
               </p>
               <p>
-                Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie
-                leo, vitae iaculis nisl.Leite de capivaris, leite de mula
-                manquis sem cabeça. Suco de cevadiss, é um leite divinis, qui
-                tem lupuliz, matis, aguis e fermentis.Manduma pindureta quium
-                dia nois paga.
+                Passionate about learning new technologies and in the idea of sharing experiences
+                and life values through coding. Strongly believes that code has no accent nor gender
+                , and that through diversity, people flourish and foster their own human revolution, 
+                self-development and self-knowledge.
               </p>
               <p>
-                Interagi no mé, cursus quis, vehicula ac nisi.Nullam volutpat
-                risus nec leo commodo, ut interdum diam laoreet. Sed non
-                consequat odio.Todo mundo vê os porris que eu tomo, mas ninguém
-                vê os tombis que eu levo!Sapien in monti palavris qui num
-                significa nadis i pareci latim.
+                Open-minded, inquirer, risk-taker, knowledgeable and communicator are some of the words 
+                that I would describe myself.
               </p>
             </article>
           </div>
