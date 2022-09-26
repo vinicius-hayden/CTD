@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEP</title>
+</head>
+<body>
+    <script>
+        
+        // console.log('First Requisiton', requisition)
+        // requisition
+        // .then(response => {
+        //     console.log("Result of first requisition", response)
+        //     return response.json();
+        // })
+        // .then(reponseJSON => {
+        //     console.log("Result of second requisiton", reponseJSON);
+        //     console.log(reponseJSON.ddd);
+        // })
+
+        async function communicationServer() { 
+            let endpoint = 'https://viacep.com.br/ws/01001000/json'; 
+            let requisition = await fetch(endpoint); // Wait for this promise to be done
+            console.log("async/await: Result of first requisition", requisition);
+            const reponseJSON = await requisition.json();
+            console.log("async/await: Result of second requisiton", reponseJSON);
+        }
+
+        communicationServer();
+
+    </script>
+</body>
+    
+</html>
